@@ -15,7 +15,7 @@ import ScrollToTop from './components/scroll/ScrollToTop';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Portfolio">
       <ScrollToTop />
       <div className="App">
         <Routes>
@@ -35,11 +35,12 @@ const App = () => {
             } 
           />
           <Route path="/projects" element={<Projects />} />
-        <Route path="/project-details/:projectId" element={<Details />} />
+          <Route path="/project-details/:projectId" element={<Details />} />
         </Routes>
       </div>
     </Router>
   );
 };
+
 
 export default App;

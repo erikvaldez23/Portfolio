@@ -1,12 +1,14 @@
 import React from "react";
 import "./Hero.css"
 import Photos from "../photos/Photos.jsx";
+import Headshot from './Headshot.png'
+
 const Hero = () => {
     return(
             <div className="hero">
                 <div className="hero-content">
                     <div className="left-content">
-                        <img src="/Headshot.png" alt="Profile" className="profile-image" />
+                        <img src={Headshot} alt="Profile" className="profile-image" />
     
                         <div className="quote">
                             <h1>Hello, my name is Erik Valdez!</h1>

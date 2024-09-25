@@ -1,0 +1,74 @@
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.logo-container {
+  text-align: center;
+  margin-top: 10px; /* Small margin to separate text and logo */
+}
+
+/* Logo image styling */
+.logo {
+  width: 325px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  display: inline-block;
+}
+
+  .social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5em;
+  }
+  
+  .footer-text {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
+  .scroll-to-top {
+    position: fixed; /* Keep it fixed at the bottom */
+    bottom: 30px; /* Distance from the bottom of the page */
+    right: 30px; /* Distance from the right side */
+    background-color: #df4747; /* Background color */
+    color: white; /* Text/icon color */
+    border: none; /* Remove border */
+    padding: 15px 20px; /* Padding inside the button */
+    border-radius: 50%; /* Circular button */
+    font-size: 1.5rem; /* Size of the arrow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .scroll-to-top:hover {
+    background-color: #c73535; /* Change background color on hover */
+    cursor: pointer;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: #fff; /* Make sure the icons are visible */
+    font-size: 2rem; /* Adjust the size */
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #df4747; /* Change color on hover */
+    cursor: pointer;
+  }

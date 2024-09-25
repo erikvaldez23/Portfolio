@@ -1,0 +1,53 @@
+.contact-section {
+  text-align: center;
+  background-color: #f9f9f9; /* Background color for the section */
+  color: #333;
+}
+
+.contact-line {
+  width: 100px;
+  height: 2px;
+  background-color: #333;
+  margin: 0 auto 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 2rem;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #0073b1; /* Change to LinkedIn/GitHub/Twitter colors on hover */
+}
+
+.credits {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #999;
+}

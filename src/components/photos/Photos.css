@@ -1,0 +1,67 @@
+/* General carousel section styling */
+.carousel-section {
+  width: 28vw; /* Make the carousel width relative to the viewport */
+  max-width: 700px; /* Set a max width for larger screens */
+  margin: 50px auto;
+  padding: 20px 40px; /* Add padding */
+  
+  /* Media query for larger screens */
+  @media (min-width: 1200px) {
+    max-width: 1000px; /* Increase max-width on large screens */
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    width: 95vw; /* Adjust the width for smaller screens */
+    padding: 10px 20px; /* Reduce padding */
+  }
+}
+
+/* Image styling */
+.carousel img {
+  width: 100%; /* Ensure full width within the container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 30px;
+}
+
+/* Caption/legend styling */
+.carousel .legend {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2vw; /* Use viewport width for responsive font size */
+  text-align: center;
+  
+  /* Media query for larger screens */
+  @media (min-width: 1200px) {
+    font-size: 1.5rem; /* Set a consistent size on larger screens */
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    font-size: 3vw; /* Larger relative font size on small screens */
+  }
+}
+
+/* Custom arrows */
+.custom-arrow {
+  position: absolute;
+  bottom: -17px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 4vw; /* Use viewport width for responsive sizing */
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Left arrow styling */
+.prev-arrow {
+  left: 5px; /* Make it responsive using viewport width */
+  
+}
+
+/* Right arrow styling */
+.next-arrow {
+  right: 5px; /* Make it responsive using viewport width */
+}

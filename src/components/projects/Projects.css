@@ -1,0 +1,89 @@
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  padding: 20px;
+  margin: 0 auto; 
+  width: fit-content; 
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    width: 100%; 
+    gap: 20px;
+    padding: 10px; 
+    align-items: center;
+  }
+}
+
+.project-card {
+  background-color: white;
+  padding: 20px;
+  width: 700px;
+  height: 230px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; 
+}
+
+.project-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: auto;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h2 {
+  color: #df4747;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  height: 60px; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  height: 100px; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.project-card button {
+  background-color: white;
+  color: red; 
+  border: 2px solid red; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-self: center;
+}
+
+.project-card button:hover {
+  background-color: #df4747; 
+  color: white; 
+  border: 2px solid #fff;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

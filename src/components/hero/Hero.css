@@ -1,135 +1,143 @@
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/background6.jpeg') no-repeat center center/cover;
-    height: 80vh;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    position: relative;
-  }
-  
-  .hero-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;  /* Stack the profile image and quote vertically */
-    text-align: center;
-  }
-  
-  .profile-image {
-    width: 250px;           /* Set profile image size */
-    border-radius: 50%;     /* Make the image round */
-    margin-bottom: 50px;    /* Add spacing between the image and the quote */
-    margin-left: 50px;
-  }
-  
-  .quote {
-    font-size: 24px;        /* Adjust font size as needed */
-    color: #fff;            /* Set a text color */
-    margin-bottom: 20px;    /* Space below the quote if needed */
-  }
-  
-  .cta-btn {
-    margin-top: 15px;
-  }
-  
-  .right-content {
-    position: absolute;    /* Keep the photo carousel positioned at the far right */
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);  /* Vertically center the carousel */
-    margin-left: -50px;
-  }
-  
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;  /* Stack the content on smaller screens */
-    }
-  
-    .right-content {
-      position: relative;      /* Ensure proper stacking on small screens */
-      top: auto;
-      transform: none;
-      margin-top: 20px;
-    }
-  }
-  
-  .quote h1{
-    font-size: 2.8rem;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-    overflow: hidden; /* Ensure the text doesn't wrap */
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-    border-right: 0.15em solid white; /* The cursor effect */
-    width: 0; /* Start with the text hidden */
-    animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite; /* Apply typing and cursor blink animations */
-  }
-
-/* Fade-in effect for the subline */
-.subline {
-    font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 1s ease-in forwards; /* Fade-in effect */
-    animation-delay: 3.5s; /* Delay the animation until header is done typing */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/background6.jpeg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
 }
 
-/* Keyframe for the fade-in effect */
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;  /* Default: horizontal layout */
+  text-align: center;
+}
+
+.profile-image {
+  width: 250px;           /* Profile image size for larger screens */
+  border-radius: 50%;     /* Make the image round */
+  margin-bottom: 50px;    /* Space below image */
+  margin-left: 50px;      /* Add margin on the left */
+}
+
+.quote {
+  font-size: 24px;        /* Font size for the quote */
+  color: #fff;            /* Text color */
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  margin-top: 15px;
+  background-color: #df4747;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #c73535;
+}
+
+.right-content {
+  position: absolute;    /* Keep the photo carousel positioned on the right */
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);  /* Vertically center the carousel */
+  margin-left: -50px;
+}
+
+.quote h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+  border-right: 0.15em solid white;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+.subline {
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 3.5s;
+}
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: white; }
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
 }
 
-  
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+.about-photos {
+  flex: 0 0 400px;
+  text-align: right;
+}
+
+.about-photos img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .hero {
+      height: auto;               /* Let hero section adjust height */
+      padding: 20px;              /* Add padding for better spacing */
   }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: white; }
+
+  .hero-content {
+      flex-direction: column;     /* Stack content vertically */
+      align-items: center;        /* Center the content */
   }
+
+  .profile-image {
+      width: 150px;               /* Smaller profile image */
+      margin-bottom: 30px;        /* Less margin for mobile */
+      margin-left: 0;             /* Center image on mobile */
+  }
+
+  .quote h1 {
+      font-size: 2rem;            /* Adjusted font size for mobile */
+      white-space: normal;        /* Allow text to wrap */
+      width: auto;                /* Remove fixed width for mobile */
+  }
+
+  .subline {
+      font-size: 1.2rem;          /* Smaller subtext for mobile */
+  }
+
+  .right-content {
+      position: relative;         /* Stack content instead of positioning absolutely */
+      top: auto;
+      transform: none;            /* Remove transform on mobile */
+      margin-top: 20px;
+  }
+
   .cta-btn {
-    background-color: #df4747;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+      padding: 8px 16px;          /* Smaller button padding */
+      font-size: 0.9rem;          /* Smaller button text */
   }
-  
-  .cta-btn:hover {
-    background-color: #c73535;
-  }
-  .about-photos {
-    flex: 0 0 400px; /* Fix the width of the image container */
-    text-align: right; /* Align image container to the right */
-  }
-  
-  .about-photos img {
-    max-width: 100%; /* Ensure the image scales within the container */
-    height: auto; /* Keep the aspect ratio of the image */
-  }
+}

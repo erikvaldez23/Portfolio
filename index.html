@@ -8,10 +8,10 @@
     <title>Valdez Portfolio</title>
 
     <!-- Redirect logic -->
-    <meta http-equiv="refresh" content="0; url=/Portfolio/">
     <script type="text/javascript">
+      // Redirect only if we're on the root path and not already on "/Portfolio"
       if (window.location.pathname === "/") {
-        window.location.href = "/Portfolio/";
+        window.location.href = "/Portfolio";
       }
     </script>
     <script type="module" crossorigin src="/Portfolio/assets/index-XFJzhUBw.js"></script>

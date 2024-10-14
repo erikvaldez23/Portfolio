@@ -9,8 +9,8 @@
 
     <!-- Redirect logic -->
     <script type="text/javascript">
-      // Redirect only if we're on the root path and not already on "/Portfolio"
-      if (window.location.pathname === "/") {
+      // Redirect only if we're on the root path of the custom domain
+      if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
         window.location.href = "/Portfolio/";
       }
     </script>

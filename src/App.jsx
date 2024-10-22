@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
+// Components
 import Footer from './components/footer/Footer';
 import Projects from './components/projects/Projects';
 import Hero from './components/hero/Hero';
@@ -12,6 +13,8 @@ import Courses from './components/courses/Courses';
 import Topbar from './components/topbar/Topbar';
 import Details from './components/projects/Details';
 import ScrollToTop from './components/scroll/ScrollToTop';
+import Orgs from './components/orgs/Orgs';
+import Cert from './components/certs/Cert'
 
 const App = () => {
   return (
@@ -28,6 +31,8 @@ const App = () => {
                 <Skills />
                 <About />
                 <Experience />
+                <Cert />
+                <Orgs />
                 <Projects />
                 <Courses />
                 <Footer />

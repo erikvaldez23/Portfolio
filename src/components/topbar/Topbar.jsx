@@ -1,14 +1,13 @@
 import React from "react";
-import { Link as ScrollLink } from 'react-scroll';  // Import react-scroll Link for smooth scrolling
-import { Link as RouterLink, useLocation } from 'react-router-dom'; // Import react-router-dom Link
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import "./Topbar.css";
+import Resume from './Valdez.Resume.pdf'
 
 const Topbar = () => {
-  const location = useLocation(); // Detect the current route
+  const location = useLocation();
 
-  // Helper function to scroll to a section after routing back to the main page
   const scrollAfterRouting = (sectionId) => {
-    // Add a short delay to ensure the page has loaded before scrolling
     setTimeout(() => {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
@@ -17,7 +16,6 @@ const Topbar = () => {
   return (
     <nav className="topbar">
       <ul>
-        {/* Conditionally use react-scroll on the main page, and router links on subpages */}
         <li>
           {location.pathname === "/" ? (
             <ScrollLink to="skills" smooth={true} duration={500}>Skills</ScrollLink>
@@ -41,6 +39,20 @@ const Topbar = () => {
         </li>
         <li>
           {location.pathname === "/" ? (
+            <ScrollLink to="certificate" smooth={true} duration={500}>Certifications</ScrollLink>
+          ) : (
+            <RouterLink to="/" onClick={() => scrollAfterRouting('certificate')}>Certificate</RouterLink>
+          )}
+        </li>
+        <li>
+          {location.pathname === "/" ? (
+            <ScrollLink to="orgs" smooth={true} duration={500}>Organizations</ScrollLink>
+          ) : (
+            <RouterLink to="/" onClick={() => scrollAfterRouting('orgs')}>Organizations</RouterLink>
+          )}
+        </li>
+        <li>
+          {location.pathname === "/" ? (
             <ScrollLink to="projects" smooth={true} duration={500}>Projects</ScrollLink>
           ) : (
             <RouterLink to="/" onClick={() => scrollAfterRouting('projects')}>Projects</RouterLink>
@@ -60,7 +72,7 @@ const Topbar = () => {
             <RouterLink to="/" onClick={() => scrollAfterRouting('footer')}>Contact</RouterLink>
           )}
         </li>
-        <li><a href="/Valdez.Resume.pdf" download="Valdez_Resume.pdf">Resume</a></li>
+        <li><a href={Resume} download="Valdez-Resume.pdf">Resume</a></li>
       </ul>
     </nav>
   );

@@ -7,7 +7,7 @@
   
   /* Media query for larger screens */
   @media (min-width: 1200px) {
-    max-width: 1000px; /* Increase max-width on large screens */
+    max-width: 900px; /* Increase max-width on large screens */
   }
   
   /* Media query for smaller screens */

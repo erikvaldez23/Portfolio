@@ -10,6 +10,8 @@ import image6 from './finance-df-1.png'
 import image7 from './finance-csv.png'
 import image8 from './dataout-hw1.png'
 import image9 from './hw1-sub.png'
+import image10 from './CalendarSS.png'
+import image11 from './SMS-SS.png'
 import TopBar from '../topbar/Topbar';
 import Footer from '../footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -101,6 +103,25 @@ const projectData = {
       allowing for an easy comparison between different phone models. The final output was structured into a CSV file, making it readily available for further analysis or visualization.",
       "Through this process, I was able to identify key differences in product features, such as varying camera resolutions, battery capacities, and storage options, providing valuable insights into consumer options in the smartphone market."
     ]
+  },
+  5: {
+    title:  "Automated SMS Notification System",
+    introduction: [
+    "The Automated Assignment Reminder System is designed to send timely SMS notifications for upcoming due assignments. Built using Python, cron, and the Textbelt API, this system automates the process of notifying users by scheduling daily messages, \
+    ensuring that critical tasks are not overlooked. The system reads assignment data from an Excel file, checks for due dates, and consolidates reminders into a single text message if multiple assignments are due on the same day."
+    ],
+    technologies: ["Python", "cron", "TextBelt API", "Pandas", "Excel"],
+    images: [image10, image11],
+    captions: ["Phone Details Page for Galaxy S20 5G", "Final CSV with all specified data for all phones"],
+    evaluatedData: [
+      "Academic-Calendar.csv",
+    ],
+    analysis: [
+      "The Automated Assignment Reminder System was designed to address the challenge of keeping track of multiple assignments and due dates. The primary goal was to create an efficient and automated way to remind users of upcoming deadlines, reducing the risk of missed tasks.\
+      The system integrates Python, cron, and the Textbelt API to ensure daily SMS notifications are sent automatically. By using cron for scheduling, the solution runs without the need for manual intervention. Python, coupled with Pandas, processes an Excel file containing assignment data, \
+      checks for due dates, and consolidates reminders into a single message per day if multiple assignments are due. This project improves user productivity by automating reminders and ensures that important deadlines are met. \
+      It also demonstrates the power of task automation through scripting and scheduling, along with the effective use of APIs for communication."
+    ]
   }
 };
 
@@ -184,7 +205,9 @@ const Details = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      <div className="footer-wrapper">
+        <Footer />
+      </div>
     </div>
   );
 };

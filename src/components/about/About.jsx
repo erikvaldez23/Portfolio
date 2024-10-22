@@ -17,9 +17,9 @@ const About = () => {
       </div>
 
       {/* Logo at the bottom */}
-      <div className="logo-container">
+      {/* <div className="logo-container">
         <img src={logo} alt="Rawls College of Business Logo" className="logo" />
-      </div>
+      </div> */}
     </div>
   );
 };

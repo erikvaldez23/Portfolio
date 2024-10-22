@@ -5,7 +5,7 @@ const Courses = () => {
     return(
         <div className="section" id="courses">
   <hr className="line" />
-  <h1>RELEVANT COURSES</h1>
+  <h1>RELEVANT COURSEWORK</h1>
   <div className="courses-container">
     <div className="course-box">
       <h2>Database Management Systems</h2>

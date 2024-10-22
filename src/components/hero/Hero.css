@@ -7,51 +7,78 @@
   color: white;
   text-align: center;
   position: relative;
+  overflow-x: hidden; /* Prevent any horizontal overflow */
 }
 
 .hero-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;  /* Default: horizontal layout */
+  flex-direction: row;  /* Default desktop layout */
   text-align: center;
 }
 
 .profile-image {
-  width: 250px;           /* Profile image size for larger screens */
-  border-radius: 50%;     /* Make the image round */
-  margin-bottom: 50px;    /* Space below image */
-  margin-left: 50px;      /* Add margin on the left */
+  width: 100%;          /* Make image scale dynamically */
+  max-width: 250px;      /* Set a max width for larger screens */
+  border-radius: 50%;    /* Make the image round */
+  margin-bottom: 50px;   /* Add spacing between the image and the quote */
+  margin-left: 50px;
 }
 
 .quote {
-  font-size: 24px;        /* Font size for the quote */
-  color: #fff;            /* Text color */
+  font-size: 24px;
+  color: #fff;
   margin-bottom: 20px;
 }
 
-.cta-btn {
-  margin-top: 15px;
-  background-color: #df4747;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-btn:hover {
-  background-color: #c73535;
-}
-
 .right-content {
-  position: absolute;    /* Keep the photo carousel positioned on the right */
+  position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);  /* Vertically center the carousel */
+  transform: translateY(-50%);
   margin-left: -50px;
+  max-width: 100%; /* Ensure the content doesn't overflow */
+}
+
+@media (max-width: 768px) {
+  .hero {
+      height: auto;
+      padding: 20px;
+      display: block;
+  }
+
+  .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .profile-image {
+      width: 100%;
+      max-width: 150px; /* Limit image size on mobile */
+      margin-bottom: 20px;
+      margin-left: 0;
+  }
+
+  .quote {
+      margin-bottom: 30px;
+  }
+
+  .right-content {
+      position: relative;
+      margin-left: 0;
+      top: auto;
+      transform: none;
+      margin-top: 20px;
+      width: 100%;
+  }
+
+  .quote h1 {
+      font-size: 1.8rem; /* Adjust font size for mobile */
+      white-space: normal; /* Allow text to wrap on mobile */
+  }
 }
 
 .quote h1 {
@@ -59,7 +86,8 @@
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent wrapping on larger screens */
   border-right: 0.15em solid white;
   width: 0;
   animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
@@ -91,6 +119,22 @@
   50% { border-color: white; }
 }
 
+.cta-btn {
+  background-color: #df4747;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #c73535;
+}
+
 .about-photos {
   flex: 0 0 400px;
   text-align: right;
@@ -99,45 +143,4 @@
 .about-photos img {
   max-width: 100%;
   height: auto;
-}
-
-/* Media queries for mobile responsiveness */
-@media (max-width: 768px) {
-  .hero {
-      height: auto;               /* Let hero section adjust height */
-      padding: 20px;              /* Add padding for better spacing */
-  }
-
-  .hero-content {
-      flex-direction: column;     /* Stack content vertically */
-      align-items: center;        /* Center the content */
-  }
-
-  .profile-image {
-      width: 150px;               /* Smaller profile image */
-      margin-bottom: 30px;        /* Less margin for mobile */
-      margin-left: 0;             /* Center image on mobile */
-  }
-
-  .quote h1 {
-      font-size: 2rem;            /* Adjusted font size for mobile */
-      white-space: normal;        /* Allow text to wrap */
-      width: auto;                /* Remove fixed width for mobile */
-  }
-
-  .subline {
-      font-size: 1.2rem;          /* Smaller subtext for mobile */
-  }
-
-  .right-content {
-      position: relative;         /* Stack content instead of positioning absolutely */
-      top: auto;
-      transform: none;            /* Remove transform on mobile */
-      margin-top: 20px;
-  }
-
-  .cta-btn {
-      padding: 8px 16px;          /* Smaller button padding */
-      font-size: 0.9rem;          /* Smaller button text */
-  }
 }

@@ -40,6 +40,10 @@ const Skills = () => {
             <i className="fas fa-code"></i>
             <span>Full Stack Dev</span>
           </div>
+          <div className="skill-item">
+            <i className="fas fa-code"></i>
+            <span>Cron</span>
+          </div>
         </div>
       </div>
     )

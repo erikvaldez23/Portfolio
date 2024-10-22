@@ -1,13 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
-
-// Import your logo images
 import ttuLogo from './ttu-logo.png'
+import elogo from './e-logo.webp'
+
 const Projects = () => {
   const navigate = useNavigate();
 
-  // Function to handle "See More Details" button clicks
   const handleSeeMore = (projectId) => {
     navigate(`/project-details/${projectId}`);
   };
@@ -63,6 +62,18 @@ const Projects = () => {
             See More Details
           </button>
           <img src={ttuLogo} alt="Smartphone Logo" className="project-logo" />
+        </div>
+
+           {/* Project 5 */}
+           <div className="project-card">
+          <h2>Automated SMS Messenger</h2>
+          <p className="project-description">
+            Developed an automated SMS notification system using Python, cron, and Textbelt API to send daily reminders for due assignments, streamlining communication and ensuring timely alerts without manual intervention.         
+          </p>
+          <button onClick={() => handleSeeMore(5)} className="see-more-button">
+            See More Details
+          </button>
+          <img src={elogo} alt="Smartphone Logo" className="project-logo" />
         </div>
       </div>
     </div>

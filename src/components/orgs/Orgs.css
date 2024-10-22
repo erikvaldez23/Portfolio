@@ -1,12 +1,12 @@
 /* Section Styling */
-#experience {
+#orgs {
     padding: 60px 20px;
     background-color: #f9f9f9; /* Lighter background for better contrast */
     text-align: center;
   }
   
-  /* Experience Container */
-  .experience-container {
+  /* orgs Container */
+  .orgs-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -14,12 +14,12 @@
     padding-top: 30px;
   }
   
-/* Experience Card */
-.experience-card {
+/* orgs Card */
+.orgs-card {
   position: relative; /* Needed for absolute positioning inside the card */
   background-color: white;
   padding: 27px;
-  width: 300px;
+  width: 500px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -29,34 +29,34 @@
 }
 
 /* Company Logo */
-.company-logo {
+.companies-logo {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  width: 40px; /* Adjust the size based on your preference */
+  width: 65px; /* Adjust the size based on your preference */
   height: auto;
   border-radius: 15px;
 }
 
   
-  .experience-card:hover {
+  .orgs-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
   /* Job Title and Company */
-  .experience-card h2 {
+  .orgs-card h2 {
     font-size: 1.5rem;
     margin-bottom: 5px;
     color: #df4747;
   }
   
-  .experience-card h3 {
+  .orgs-card h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #666;
   }
-  .experience-card .date {
+  .orgs-card .date {
     font-size: 0.9rem;
     font-style: italic;
     color: #999; /* Even lighter tone */

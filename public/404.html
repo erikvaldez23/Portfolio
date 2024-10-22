@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    // Redirect all 404 requests to index.html
+    var redirectTo = window.location.pathname;
+    if (redirectTo.startsWith("/Portfolio/")) {
+      window.location.replace("/Portfolio/?" + redirectTo.substring(10));
+    } else {
+      window.location.replace("/?" + redirectTo);
+    }
+  </script>
+  

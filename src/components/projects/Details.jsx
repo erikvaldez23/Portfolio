@@ -21,10 +21,9 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 const projectData = {
   1: {
     title: "The Financial Factor: Does School Funding Drive Academic Success?",
-    introduction: "Our project examines how school funding impacts student outcomes, focusing not only on grades but also on broader life effects like college attendance and job opportunities. \
-    By analyzing the connections between education, funding, and economic growth, we aim to support efforts for a fairer education system. We visualized how funding affects students' journeys through high school and beyond, \
-    including job growth rates in rural and city districts. This data highlights the disparities in education across Texas. \
-    While curriculum and education can be subjective, this report presents factual insights to inform discussions on the role of funding in shaping student success.",
+    introduction: "Our project investigates the correlation between increased school funding and academic performance by examining standardized test scores, dropout rates, and graduation rates across various districts.\
+     We also analyze demographic factors, such as socioeconomic status, race, and geographic location, to identify what significantly impacts student success. Through visualizing these connections, our aim is to provide data-driven insights that highlight \
+     the true effects of educational funding on academic outcomes, offering an objective perspective on efforts to reduce educational disparities and promote equitable opportunities for all students across Texas.",
     technologies: ["Python", "Pandas", "Data Cleaning", "Data Merging", "Matplotlib"],
     images: [image7, image6, image,],
     captions: ["Financial Dataset for PlanoISD 2021 provided by the Texas Education Agency", "Cleaned Datafame with just Total Revenue and Total Expenditures calculated for every school district between the years 2017-2021", "Final Dataframe with all specified infrormation for a total of 10 school district across the years 2017-2021"],
@@ -112,7 +111,7 @@ const projectData = {
     ],
     technologies: ["Python", "cron", "TextBelt API", "Pandas", "Excel"],
     images: [image10, image11],
-    captions: ["Phone Details Page for Galaxy S20 5G", "Final CSV with all specified data for all phones"],
+    captions: ["Schedule using Excel", "Example text message"],
     evaluatedData: [
       "Academic-Calendar.csv",
     ],

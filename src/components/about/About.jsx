@@ -12,7 +12,9 @@ const About = () => {
         {/* Text container on the left */}
         <div className="about-text">
           <p>
-          I am a driven and passionate software developer pursuing a Bachelor's degree in Information Technology with a concentration in systems at Texas Tech University, with an expected graduation in May 2025. Hailing from Dallas, Texas, my journey in tech has been fueled by a relentless desire to solve complex problems and create meaningful digital experiences. My proficiency spans both front-end and back-end development, as well as operating systems like Unix and Linux, enabling me to contribute to projects from ideation to deployment. I thrive in dynamic environments where I can apply my technical expertise to develop efficient, scalable solutions. I'm excited to leverage my skills and hands-on experience to make an immediate impact in the tech industry.          </p>  
+          I am a passionate software developer currently pursuing a Bachelor's in Information Technology with a focus on systems at Texas Tech University, set to graduate in May 2025. Based in Dallas, Texas, I bring a proactive, solutions-driven mindset to my work, excelling in both front-end and back-end development. 
+          My experience spans operating systems like Unix and Linux, enabling me to handle projects from conception to deployment. I thrive in fast-paced environments where I can leverage my skills to build efficient, scalable solutions that drive real impact. I'm eager to apply my technical expertise to innovative projects and make an immediate contribution in the tech industry.
+          </p>
         </div>
       </div>
 

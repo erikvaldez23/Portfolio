@@ -20,10 +20,10 @@
 
 .profile-image {
   width: 100%;          /* Make image scale dynamically */
-  max-width: 250px;      /* Set a max width for larger screens */
+  max-width: 200px;      /* Set a max width for larger screens */
   border-radius: 50%;    /* Make the image round */
   margin-bottom: 50px;   /* Add spacing between the image and the quote */
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 .quote {
@@ -97,6 +97,7 @@
   font-size: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   margin-top: 10px;
+  margin-left: -35px;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -143,4 +144,28 @@
 .about-photos img {
   max-width: 100%;
   height: auto;
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 4s; /* Delay to make it appear after the subline */
+}
+
+.social-icons a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #df4747; /* Change to a color that matches your theme */
+  cursor: pointer;
 }

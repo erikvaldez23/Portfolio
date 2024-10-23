@@ -1,10 +1,14 @@
 .about-container {
-  padding: 40px; /* Padding around the section */
-  background-color: #f9f9f9; /* Light background color */
-  margin: 0 auto; /* Center the section */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1400px;
+  padding: 20px; /* Reduced padding to match experience container */
+  background-color: #f9f9f9; /* Make the background white like the experience cards */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Matching shadow */
+  width: 1600px; /* Adjust width for consistency */
+  border-radius: 8px; /* Add border-radius for a similar rounded effect */
+  margin-bottom: 40px; /* Add margin to space it from the next section */
+  text-align: left; /* Align text to the left to match other cards */
 }
+
 
 /* Header styling */
 .header {

@@ -12,6 +12,8 @@ import image8 from './dataout-hw1.png'
 import image9 from './hw1-sub.png'
 import image10 from './CalendarSS.png'
 import image11 from './SMS-SS.png'
+import image12 from './crud-table.png'
+import image13 from './add-user.png'
 import TopBar from '../topbar/Topbar';
 import Footer from '../footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -120,6 +122,21 @@ const projectData = {
       The system integrates Python, cron, and the Textbelt API to ensure daily SMS notifications are sent automatically. By using cron for scheduling, the solution runs without the need for manual intervention. Python, coupled with Pandas, processes an Excel file containing assignment data, \
       checks for due dates, and consolidates reminders into a single message per day if multiple assignments are due. This project improves user productivity by automating reminders and ensures that important deadlines are met. \
       It also demonstrates the power of task automation through scripting and scheduling, along with the effective use of APIs for communication."
+    ]
+  },
+  6: {
+    title:  "CRUD Operations Through React User Interface",
+    introduction: [ 
+      "Developed a user management interface using React and Material-UI, leveraging DataGrid for dynamic data rendering, pagination, and CRUD operations. The frontend connects to a Node.js backend that serves as the API layer, enabling seamless communication with an SQLite3 database hosted locally on a Mac terminal. This project focused on creating an intuitive and responsive UI while integrating a robust backend to handle user data storage, retrieval, and updates efficiently."
+    ],
+    technologies: ["React", "Material-UI", "Node.js", "REST API", "SQLite3"],
+    images: [image12, image13],
+    captions: ["Table view from user interface", "Add user functionality"],
+    evaluatedData: [
+      "database.db"
+    ],
+    analysis: [
+      "For the data analysis portion, utilized SQLite3 to query and analyze user data, identifying patterns and ensuring data integrity. Designed efficient database schemas and queries to support dynamic rendering on the frontend, while leveraging Node.js for processing and formatting data before serving it to the React UI. This ensured accurate and meaningful insights were displayed in the user management interface."
     ]
   }
 };

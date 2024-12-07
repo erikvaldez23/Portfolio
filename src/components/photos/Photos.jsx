@@ -5,8 +5,9 @@ import './Photos.css'
 
 const Photos = () => {
   const images = [
+    { src: "ring.jpeg", description: "Ring Ceremony" },
     { src: "seal.jpeg", description: "Senior year" },
-    { src: "ti.jpeg", description: "Summer internship at Texas Instruments!" },
+    { src: "ti.jpeg", description: "Summer internship at Texas Instruments" },
     { src: "crawfish.jpeg", description: "Delta Sigma Pi" },
     { src: "basketball.jpeg", description: "TTU Basketball" },
     { src: "gameday.JPG", description: "Football Gameday" },

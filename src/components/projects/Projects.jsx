@@ -75,6 +75,18 @@ const Projects = () => {
           </button>
           <img src={elogo} alt="Smartphone Logo" className="project-logo" />
         </div>
+
+        {/* Project 6 */}
+        <div className="project-card">
+          <h2>CRUD Operations on a Database with React</h2>
+          <p className="project-description">
+              A responsive and interactive user table built with React and Material-UI, featuring dynamic data display, customizable pagination, and CRUD functionality to efficiently manage user information.         
+          </p>
+          <button onClick={() => handleSeeMore(6)} className="see-more-button">
+            See More Details
+          </button>
+          <img src={elogo} alt="Smartphone Logo" className="project-logo" />
+        </div>
       </div>
     </div>
   );

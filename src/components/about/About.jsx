@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import logo from "./rawls-college-of-business.png"; // Adjust the path to your logo file
+
 
 const About = () => {
   return (
@@ -9,7 +9,6 @@ const About = () => {
       <h1 className="header">ABOUT ME</h1>
       
       <div className="about-content">
-        {/* Text container on the left */}
         <div className="about-text">
           <p>
           I am a passionate software developer currently pursuing a Bachelor's in Information Technology with a focus on systems at Texas Tech University, set to graduate in May 2025. Based in Dallas, Texas, I bring a proactive, solutions-driven mindset to my work, excelling in both front-end and back-end development. 
@@ -17,11 +16,6 @@ const About = () => {
           </p>
         </div>
       </div>
-
-      {/* Logo at the bottom */}
-      {/* <div className="logo-container">
-        <img src={logo} alt="Rawls College of Business Logo" className="logo" />
-      </div> */}
     </div>
   );
 };

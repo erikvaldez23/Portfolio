@@ -72,3 +72,9 @@
     color: #df4747; /* Change color on hover */
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    .social-icons a {
+      font-size: 5rem; /* Increase icon size for mobile */
+    }
+  }
+  

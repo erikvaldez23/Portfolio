@@ -1,23 +1,57 @@
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   padding: 20px;
-  margin: 0 auto; 
-  width: fit-content; 
+  margin: 0 auto;
+  width: fit-content;
 }
 
 @media (max-width: 768px) {
   .projects-container {
-    grid-template-columns: 1fr;
-    width: 100%; 
+    display: flex; /* Switch to flexbox for better control */
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align all cards */
     gap: 20px;
-    padding: 10px; 
-    align-items: center;
+    padding: 10px;
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .project-card {
+    margin: 0 auto; /* Center align cards horizontally */
+    width: 90%; /* Use responsive width */
+    max-width: 800px; /* Cap the width for consistency */
   }
 }
+
+.project-card {
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: auto; /* Adjust height dynamically for content */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.project-card button {
+  align-self: center; /* Center the button horizontally */
+}
+
+.project-logo {
+  margin: 0 auto; /* Center align the logo */
+  width: 50px;
+  height: auto;
+}
+
 
 .project-card {
   background-color: white;

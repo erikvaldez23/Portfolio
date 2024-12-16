@@ -22,7 +22,7 @@
   justify-content: space-between;
   background-color: white;
   padding: 20px;
-  width: 500px;
+  width: 500px; /* Default width for larger screens */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -37,7 +37,8 @@
 }
 
 /* Title and Company */
-.certificate-card h2, .certificate-card h3 {
+.certificate-card h2,
+.certificate-card h3 {
   margin: 0;
   padding: 5px 0;
 }
@@ -67,7 +68,6 @@
 }
 
 /* Company Logo */
-/* Company Logo */
 .cert-logo {
   position: absolute;
   bottom: 20px; /* Adjust the spacing as needed */
@@ -76,12 +76,11 @@
   height: auto;
 }
 
-
 /* View Certificate Button */
 .view-cert-button {
   background-color: white;
-  color: red; 
-  border: 2px solid red; 
+  color: red;
+  border: 2px solid red;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1rem;
@@ -93,7 +92,21 @@
 }
 
 .view-cert-button:hover {
-  background-color: #df4747; 
-  color: white; 
+  background-color: #df4747;
+  color: white;
   border: 2px solid #fff;
+}
+
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 768px) {
+  .certificate-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center-align cards */
+    gap: 20px; /* Maintain space between stacked cards */
+  }
+
+  .certificate-card {
+    width: 90%; /* Make cards take up most of the viewport width */
+    max-width: 800px; /* Limit maximum width for consistency */
+  }
 }

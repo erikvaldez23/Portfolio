@@ -35,7 +35,7 @@
   font-weight: bold;
   padding: 10px;
   transition: color 0.3s, background-color 0.3s, transform 0.3s;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
 }
 
 .topbar ul li a:hover {
@@ -66,20 +66,12 @@
   cursor: pointer;
 }
 
-/* Media queries for mobile */
 @media (max-width: 768px) {
-  .topbar ul {
-    gap: 20px; /* Reduce gap between menu items */
-  }
-
-  .topbar ul li a {
-    font-size: 0.9rem; /* Reduce font size for mobile */
-    padding: 8px 15px; /* Adjust padding to fit on smaller screens */
-  }
-
   .topbar {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: none; /* Hide the topbar completely */
   }
+}
+
 
   @keyframes fadeIn {
     from {
@@ -91,4 +83,3 @@
       transform: translateY(0);
     }
   }
-}

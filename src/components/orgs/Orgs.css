@@ -22,7 +22,7 @@
   background-color: white;
   padding: 20px;
   padding-bottom: 80px; /* Add extra padding to accommodate the logo */
-  width: 500px;
+  width: 500px; /* Default width for larger screens */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -30,6 +30,21 @@
   background: linear-gradient(135deg, #fff, #f7f7f7);
   border: 1px solid #ddd;
 }
+
+/* Stacking cards vertically on smaller screens */
+@media (max-width: 768px) {
+  .orgs-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center-align cards */
+    gap: 20px; /* Maintain space between stacked cards */
+  }
+
+  .orgs-card {
+    width: 90%; /* Make cards take up most of the viewport width */
+    max-width: 800px; /* Limit maximum width for consistency */
+  }
+}
+
 
 .orgs-card:hover {
   transform: translateY(-10px);

@@ -61,7 +61,7 @@
 
   .profile-image {
     width: 100%;
-    max-width: 150px;
+    max-width: 200px;
     margin-bottom: 30px; /* Add more space below the image */
     margin-top: 20px; /* Push the image down */
   }
@@ -80,8 +80,21 @@
     display: none;
   }
 
-  .social-icons-container {
-    margin-top: 30px; /* Add space above the social icons */
+  .social-icons a {
+    font-size: 1.8rem; /* Set a consistent size for all icons */
+    width: 60px; /* Define a fixed width */
+    height: 60px; /* Define a fixed height */
+    display: flex; /* Align icons properly */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Remove underline if any */
+  }
+
+  .social-icons a i, 
+  .social-icons a svg {
+    font-size: inherit; /* Ensure icons inherit size from their container */
+    width: 100%; /* Prevent scaling issues */
+    height: 100%;
   }
 }
 

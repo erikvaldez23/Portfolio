@@ -14,12 +14,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--main-bg-color); /* Set your body background */
+  background-color: var(--main-bg-color);
 }
 
-
-
-/* TopBar fixed at the top */
+/* TopBar Styling */
 .topbar {
   width: 100%;
   background-color: var(--main-font-color);
@@ -31,227 +29,156 @@ body {
   z-index: 1000;
 }
 
+/* Project Content Wrapper */
 .project-content-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensure the content is centered */
+  align-items: center;
   justify-content: center;
   max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+  margin: 80px auto 0; /* Add space below TopBar */
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
 }
 
 .project-content {
-  text-align: center; /* Center the text content */
   padding: 20px;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  text-align: center;
 }
-
 
 .project-details h1 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: var(--main-font-color);
   text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 2px;
-  padding-top: 40px;
-  padding-bottom: 30px;
   margin-bottom: 20px;
-  line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  transition: color 0.3s ease;
-  width: 100%;
 }
 
-.project-details h1:hover {
-  color: var(--hover-accent-color);
-  cursor: default;
-}
-
-.project-details h2,
-.project-details h3 {
+.project-details h2 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-size: 1.5rem;
   color: var(--main-font-color);
-  text-align: center;
-  line-height: 1.3;
-  animation: fadeIn 1s ease-in-out;
-  border-bottom: 4px solid #333;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-.project-content {
-  text-align: left;
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto; /* Center content inside the wrapper */
-}
-
-/* Mobile Responsive Layout */
-@media (max-width: 768px) {
-  .project-content-wrapper {
-    flex-direction: column;
-  }
-
-  .project-content {
-    padding-right: 0;
-  }
-
-  .technologies-section,
-  .evaluated-data,
-  .data-analysis {
-    grid-column: span 2;
-  }
-}
-
-/* Text Content Styling */
-.project-details p,
-.project-intro p {
+.project-details p {
   font-size: 1.2rem;
   line-height: 1.8;
   color: var(--secondary-font-color);
-  max-width: 900px;
-  margin: 0 auto 30px auto;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
-/* Flex Layout for Content Wrappers */
-.technologies-section,
-.image-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Technology Section */
 .technologies-section ul {
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin-top: 1px;
+  gap: 10px;
+  padding: 0;
 }
 
 .technologies-section li {
   background-color: var(--accent-color);
-  color: white;
+  color: #fff;
   padding: 10px 15px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 0.9rem;
-  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease;
 }
 
-.technologies-section li:hover {
-  background-color: var(--hover-accent-color);
-}
-
-/* Evaluated Data & Analysis Sections */
+/* Data and Analysis Sections */
 .evaluated-data ul,
 .data-analysis ul {
   list-style-type: none;
   padding: 0;
-  text-align: center;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .evaluated-data ul li,
 .data-analysis ul li {
-  font-size: 1.1rem;
   background-color: var(--accent-color);
   color: white;
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-/* Image Section */
+.toggle-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: var(--main-font-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Images Section */
 .image-container {
-  position: relative;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 }
 
 .project-image {
-  display: block;
   max-width: 100%;
   border-radius: 10px;
   box-shadow: var(--box-shadow-heavy);
-  transition: box-shadow 0.3s ease;
 }
 
-.image-wrapper {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.image-caption {
-  font-size: 1rem;
-  color: var(--third-font-color) !important;
-  margin-top: 10px;
-  background-color: var(--accent-color);
-  border-radius: 10px;
-}
-
-/* Back Button Styling */
+/* Back Button */
 .back-button {
   position: fixed;
   top: 20px;
   left: 20px;
+  font-size: 1.5rem;
+  color: var(--main-font-color);
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #333;
   cursor: pointer;
-  padding: 5px;
-  margin-top: 50px;
-  z-index: 1000;
-  transition: color 0.3s ease;
 }
 
-.back-button:hover {
-  color: var(--hover-accent-color);
-}
-
+/* Footer */
 .footer-wrapper {
-  width: 100vw; /* Stretch across the entire viewport width */
-  position: relative;
-  left: 0;
-  right: 0;
-  background-color: var(--main-bg-color); /* Or the color you want */
-
+  width: 100%;
+  background-color: var(--main-font-color);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
 
-/* Responsive Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
-  footer {
-    font-size: 0.8rem;
-    padding: 15px;
+  .project-content-wrapper {
+    padding: 10px;
   }
 
-  .project-content {
-    padding: 10px;
+  .project-details h1 {
+    position: relative; /* Allows for top adjustment */
+    top: 50px; /* Move the header lower on the screen */
+    margin: 50px 0 20px 0; /* Adjust vertical spacing */
+    font-size: 2rem; /* Slightly smaller font for mobile */
+    line-height: 1.5; /* Adjust line spacing for better readability */
+  }
+
+  .technologies-section li {
+    font-size: 0.8rem;
+  }
+
+  .project-image {
+    max-width: 90%;
+  }
+
+  .back-button {
+    font-size: 1rem;
+  }
+  .footer-wrapper{
+    display: none;
   }
 }

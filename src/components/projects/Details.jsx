@@ -22,7 +22,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const projectData = {
   1: {
-    title: "The Financial Factor: Does School Funding Drive Academic Success?",
+    title: "The Impact of School Funding on Academic Performance",
     introduction: "Our project investigates the correlation between increased school funding and academic performance by examining standardized test scores, dropout rates, and graduation rates across various districts.\
      We also analyze demographic factors, such as socioeconomic status, race, and geographic location, to identify what significantly impacts student success. Through visualizing these connections, our aim is to provide data-driven insights that highlight \
      the true effects of educational funding on academic outcomes, offering an objective perspective on efforts to reduce educational disparities and promote equitable opportunities for all students across Texas.",
@@ -106,7 +106,7 @@ const projectData = {
     ]
   },
   5: {
-    title:  "Automated SMS Notification System",
+    title:  "Personal Calendar SMS Reminder Service",
     introduction: [
     "The Automated Assignment Reminder System is designed to send timely SMS notifications for upcoming due assignments. Built using Python, cron, and the Textbelt API, this system automates the process of notifying users by scheduling daily messages, \
     ensuring that critical tasks are not overlooked. The system reads assignment data from an Excel file, checks for due dates, and consolidates reminders into a single text message if multiple assignments are due on the same day."
@@ -125,7 +125,7 @@ const projectData = {
     ]
   },
   6: {
-    title:  "CRUD Operations Through React User Interface",
+    title:  "Interactive Web App for CRUD Operations",
     introduction: [ 
       "Developed a user management interface using React and Material-UI, leveraging DataGrid for dynamic data rendering, pagination, and CRUD operations. The frontend connects to a Node.js backend that serves as the API layer, enabling seamless communication with an SQLite3 database hosted locally on a Mac terminal. This project focused on creating an intuitive and responsive UI while integrating a robust backend to handle user data storage, retrieval, and updates efficiently."
     ],

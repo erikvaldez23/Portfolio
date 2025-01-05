@@ -19,7 +19,7 @@ const Projects = () => {
       <div className="projects-container">
         {/* Project 1 */}
         <div className="project-card">
-          <h2>The Financial Factor: Does School Funding Drive Academic Success?</h2>
+          <h2>The Impact of School Funding on Academic Performance</h2>
           <p className="project-description">
              This project analyzes the impact of school funding on student outcomes, highlighting disparities in Texas education and exploring connections to long-term success like college attendance and job opportunities.          </p>
           <button onClick={() => handleSeeMore(1)} className="see-more-button">
@@ -66,7 +66,7 @@ const Projects = () => {
 
            {/* Project 5 */}
            <div className="project-card">
-          <h2>Automated SMS Messenger</h2>
+          <h2>Personal Calendar SMS Reminder Service</h2>
           <p className="project-description">
             Developed an automated SMS notification system using Python, cron, and Textbelt API to send daily reminders for due assignments, streamlining communication and ensuring timely alerts without manual intervention.         
           </p>
@@ -78,7 +78,7 @@ const Projects = () => {
 
         {/* Project 6 */}
         <div className="project-card">
-          <h2>CRUD Operations on a Database with React</h2>
+          <h2>Interactive Web App for CRUD Operations</h2>
           <p className="project-description">
               A responsive and interactive user table built with React and Material-UI, featuring dynamic data display, customizable pagination, and CRUD functionality to efficiently manage user information.         
           </p>

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import './Details.css';
+import '../../index.css'
 import image from './final-df.png';
 import image2 from "./hw.png"
 import image3 from './hw2.png'
@@ -158,7 +159,7 @@ const Details = () => {
       <button className="back-button" onClick={() => window.history.back()}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
-
+      
       <section className="project-details">
         <header>
           <h1>{project.title}</h1>
@@ -221,9 +222,7 @@ const Details = () => {
           </div>
         </div>
       </section>
-      <div className="footer-wrapper">
         <Footer />
-      </div>
     </div>
   );
 };

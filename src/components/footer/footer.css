@@ -76,5 +76,9 @@
     .social-icons a {
       font-size: 5rem; /* Increase icon size for mobile */
     }
+
+    .scroll-to-top {
+      display: none;
+    }
   }
   

@@ -1,80 +1,130 @@
-import React from "react";
-import { Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import Resume from "./Valdez.Resume.pdf";
 import "./Topbar.css";
-import Resume from './Valdez.Resume.pdf'
 
 const Topbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
   const location = useLocation();
+
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   const scrollAfterRouting = (sectionId) => {
     setTimeout(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     }, 100);
+    setMenuOpen(false); // Close menu after routing
   };
 
   return (
-    <nav className="topbar">
-      <ul>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="skills" smooth={true} duration={500}>Skills</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('skills')}>Skills</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="about" smooth={true} duration={500}>About</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('about')}>About</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="experience" smooth={true} duration={500}>Experience</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('experience')}>Experience</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="certificate" smooth={true} duration={500}>Certifications</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('certificate')}>Certificate</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="orgs" smooth={true} duration={500}>Organizations</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('orgs')}>Organizations</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="projects" smooth={true} duration={500}>Projects</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('projects')}>Projects</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="courses" smooth={true} duration={500}>Relevant Coursework</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('courses')}>Relevant Coursework</RouterLink>
-          )}
-        </li>
-        <li>
-          {location.pathname === "/" ? (
-            <ScrollLink to="footer" smooth={true} duration={500}>Contact</ScrollLink>
-          ) : (
-            <RouterLink to="/" onClick={() => scrollAfterRouting('footer')}>Contact</RouterLink>
-          )}
-        </li>
-        <li><a href={Resume} download="Valdez-Resume.pdf">Resume</a></li>
-      </ul>
-    </nav>
+    <div className="topbar-container">
+      <nav className="topbar">
+        <button
+          className="hamburger-menu"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+        <ul className={`topbar-links ${menuOpen ? "open" : ""}`}>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="skills" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Skills
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("skills")}>
+                Skills
+              </RouterLink>
+            )}
+          </li>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="about" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                About
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("about")}>
+                About
+              </RouterLink>
+            )}
+          </li>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="experience" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Experience
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+                Experience
+              </RouterLink>
+            )}
+          </li>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="projects" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Projects
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+                Projects
+              </RouterLink>
+            )}
+          </li>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="certificate" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Certifications
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+                Certifications
+              </RouterLink>
+            )}
+          </li>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="orgs" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Organizations
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+               Organizations
+              </RouterLink>
+            )}
+          </li>
+          <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="experience" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Experience
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+                Experience
+              </RouterLink>
+            )}
+          </li>
+          
+          {/* <li>
+            {location.pathname === "/" ? (
+              <ScrollLink to="courses" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
+                Courses
+              </ScrollLink>
+            ) : (
+              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+                Courses
+              </RouterLink>
+            )}
+          </li> */}
+          <li>
+            <a href={Resume} download="Valdez-Resume.pdf" onClick={() => setMenuOpen(false)}>
+              Resume
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

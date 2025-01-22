@@ -31,10 +31,10 @@ const App = () => {
                 <Skills />
                 <About />
                 <Experience />
+                <Projects />
                 <Cert />
                 <Orgs />
-                <Projects />
-                <Courses />
+                {/* <Courses /> */}
                 <Footer />
               </>
             } 

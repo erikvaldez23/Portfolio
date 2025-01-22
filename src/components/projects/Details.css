@@ -1,167 +1,259 @@
-/* Global Styles */
+/* Global Variables */
 :root {
-  --main-bg-color: #f7f7f7;
-  --main-font-color: #2c3e50;
-  --secondary-font-color: #555;
-  --third-font-color: #fff;
-  --accent-color: #df4747;
+  --main-bg-color: #000; /* Change background to black */
+  --main-font-color: #fff; /* Change primary font color to white */
+  --secondary-font-color: #d3d3d3; /* Use a lighter gray for secondary text */
+  --accent-color: #df4747; /* Accent color remains the same */
   --hover-accent-color: #c0392b;
-  --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --box-shadow-heavy: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Adjust shadow for contrast */
 }
 
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: var(--main-bg-color);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: var(--main-bg-color); /* Black background */
+  color: var(--main-font-color); /* White text */
 }
 
-.project-content-wrapper {
-  margin: calc(80px + 50px) auto 0;
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the page spans at least the viewport height */
+  background-color: var(--main-bg-color); /* Match page background */
+}
+
+main {
+  flex: 1; /* Allow the main content to grow and fill available space */
+}
+
+/* Project Details Section */
+.project-details {
   padding: 20px;
-  max-width: 1200px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex; /* Ensure centering */
-  flex-direction: column; /* For vertical alignment */
-  align-items: center;
-}
-
-
-.project-content {
+  max-width: 1500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 900px;
+  background-color: var(--main-bg-color); /* Ensure black background here too */
+}
+
+/* Header Alignment */
+.details-header {
   text-align: center;
-  margin: 0 auto; /* Center the content horizontally */
+  margin-bottom: 30px;
 }
 
-.project-details h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(3rem, 7vw, 5rem); /* Larger font for visibility */
-  color: var(--main-font-color); /* Use an accent color for emphasis */
+.details-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
   text-transform: uppercase;
-  text-align: center; /* Center-align the text */
-  letter-spacing: 2px;
-  font-weight: 800; /* Make the text bold */
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Add a shadow for depth */
-  margin-top: 20px; /* Add spacing above */
-  margin-bottom: 40px; /* Add spacing below */
+  border-bottom: 3px solid var(--accent-color);
   padding-bottom: 10px;
-  border-bottom: 10px solid var(--main-font-color); /* Add an underline */
+  margin: 0 auto;
+  color: var(--main-font-color); /* White text */
 }
 
+/* Content Layout */
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+}
 
-.project-details h2 {
-  font-family: 'Roboto', sans-serif;
+.project-content {
+  padding: 20px;
+  background-color: #111; /* Slightly lighter black for better text contrast */
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.project-content h2 {
   font-size: 1.5rem;
+  margin-bottom: 10px;
   color: var(--main-font-color);
+}
+
+.project-content p, .project-content ul li {
+  font-size: 1rem;
+  color: var(--secondary-font-color);
   margin-bottom: 15px;
 }
 
-.project-details p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--secondary-font-color);
-  text-align: left;
-  margin-bottom: 20px;
+.project-content ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* Technology Section */
-.technologies-section ul {
+.technologies-section ul,
+.evaluated-data ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
-  padding: 0;
 }
 
-.technologies-section li {
-  background-color: var(--accent-color);
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-}
-
-/* Data and Analysis Sections */
-.evaluated-data ul,
-.data-analysis ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.evaluated-data ul li,
-.data-analysis ul li {
+.technologies-section li,
+.evaluated-data ul li {
   background-color: var(--accent-color);
   color: white;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Data Analysis */
+.data-analysis {
+  background-color: #222; /* Dark gray for contrast */
+  border: 1px solid var(--accent-color);
+  padding: 15px;
+  border-radius: 8px;
+  color: var(--main-font-color);
 }
 
 /* Images Section */
-.image-container {
+.image-grid {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
   gap: 15px;
-  justify-content: center;
+}
+
+.image-wrapper {
+  position: relative;
+  text-align: center;
 }
 
 .project-image {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow-heavy);
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
 }
 
-/* Back Button */
-.back-button {
+.image-caption {
+  font-size: 0.9rem;
+  color: var(--secondary-font-color);
+  margin-top: 5px;
+}
+
+.modal {
   position: fixed;
-  top: 200px;
-  left: 20px;
-  font-size: 3.5rem;
-  color: var(--main-font-color);
-  background: none;
-  border: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Add padding to avoid the image touching the edges */
+}
+
+.modal img {
+  max-width: 90%; /* Ensure the image does not exceed 90% of the screen width */
+  max-height: 90%; /* Ensure the image does not exceed 90% of the screen height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners for a polished look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  object-fit: contain; /* Ensure the entire image fits inside the modal */
   cursor: pointer;
 }
 
 
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  font-size: 2rem;
+  color: var(--main-font-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+  color: var(--hover-accent-color);
+}
+
+
+footer {
+  background-color: var(--main-bg-color); /* Match footer background */
+  color: var(--secondary-font-color); /* Light gray text */
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%; /* Full width of the viewport */
+  border-top: 1px solid var(--accent-color); /* Optional: Top border for separation */
+  box-sizing: border-box;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .project-content-wrapper {
-    padding: 10px;
+  .content-layout {
+    grid-template-columns: 1fr; /* Stack content vertically */
+    gap: 10px; /* Reduce spacing between sections */
   }
 
-  .project-details h1 {
-    position: relative;
-    top: 50px;
-    margin: 50px 0 20px 0;
-    font-size: 2rem;
-    line-height: 1.5;
+  .project-content {
+    padding: 15px; /* Compact padding */
+    margin-bottom: 15px; /* Add spacing below each section */
   }
 
-  .technologies-section li {
-    font-size: 0.8rem;
+  .image-grid {
+    flex-wrap: wrap; /* Allow images to wrap */
+    justify-content: center; /* Center images on smaller screens */
+    gap: 10px; /* Reduce gap between images */
+  }
+
+  .image-wrapper {
+    width: 100%; /* Full width for better image scaling */
+    max-width: 200px; /* Limit image size */
   }
 
   .project-image {
-    max-width: 90%;
+    max-width: 100%; /* Scale images to fit within their container */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .project-details {
+    padding: 10px;
   }
 
-  .back-button {
-    display:none;
+  .details-header h1 {
+    font-size: 1.8rem; /* Compact header */
   }
 
-  .footer-wrapper {
-    display: none; 
+  .content-layout {
+    gap: 10px;
+  }
+
+  .project-content h2 {
+    font-size: 1rem;
+  }
+
+  .project-content p {
+    font-size: 0.7rem;
+  }
+
+  .project-image {
+    max-width: 100%;
+  }
+
+  .modal img {
+    max-width: 100%; /* Utilize full width for smaller screens */
+    max-height: 70%;
   }
 }

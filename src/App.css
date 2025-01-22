@@ -1,19 +1,19 @@
 .line {
   width: 100px;
   height: 2px;
-  background-color: #333;
+  background-color: #fff;
   margin: 0 auto 20px;
 }
 
 .section {
   padding: 60px 20px;
-  background-color: #f9f9f9; /* Lighter background for better contrast */
+  background-color: #000/* Lighter background for better contrast */
 }
 
-.section h1 {
+.section h1,h2,h3 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #ffffff;
   text-align: center; /* This will center the header */
   width: 100%; /* Ensure the header takes up the full width of the section */
 }
@@ -24,14 +24,9 @@
   line-height: 1.6;
 }
 
-.section ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
 
-.section li {
-  margin-bottom: 10px;
-}
+
+
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {

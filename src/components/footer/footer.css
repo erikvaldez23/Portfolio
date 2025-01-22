@@ -1,5 +1,5 @@
 .footer {
-    background-color: #333;
+    background-color: #000;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -74,7 +74,7 @@
   }
   @media (max-width: 768px) {
     .social-icons a {
-      font-size: 5rem; /* Increase icon size for mobile */
+      font-size: 2rem; /* Increase icon size for mobile */
     }
 
     .scroll-to-top {

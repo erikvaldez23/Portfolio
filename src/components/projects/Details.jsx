@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Details.css';
-import '../../index.css'
 import image from './final-df.png';
 import image2 from "./hw.png"
 import image3 from './hw2.png'
@@ -19,7 +18,6 @@ import TopBar from '../topbar/Topbar';
 import Footer from '../footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
 
 const projectData = {
   1: {
@@ -141,33 +139,35 @@ const projectData = {
     ]
   }
 };
-
 const Details = () => {
-  const { projectId } = useParams(); // Capture the projectId from the URL
-  const imageRef = useRef(null);
-
-  // Convert projectId to a number
+  const { projectId } = useParams();
+  const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(null);
   const project = projectData[Number(projectId)];
 
   if (!project) {
-    return <p>Project not found</p>; // Handle case where projectId doesn't match any data
+    return <p>Project not found</p>;
   }
 
+  const openImageModal = (image) => setSelectedImage(image);
+
   return (
-    <div>
+    <div className='page-container'>
       <TopBar />
-      <button className="back-button" onClick={() => window.history.back()}>
+      <button className="back-button" onClick={() => navigate(-1)}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
-      
-      <section className="project-details">
-        <header>
+
+      <main className="project-details">
+        {/* Page Header */}
+        <header className="details-header">
           <h1>{project.title}</h1>
         </header>
 
-        <div className="project-content-wrapper">
-          <div className="project-content">
-            {/* Intro Section */}
+        {/* Content Layout */}
+        <div className="content-layout">
+          {/* Main Content Section */}
+          <section className="project-content">
             <section className="project-intro">
               <h2>Introduction</h2>
               <p>{project.introduction}</p>
@@ -182,7 +182,6 @@ const Details = () => {
               </ul>
             </section>
 
-            {/* Evaluated Data Section */}
             <section className="evaluated-data">
               <h2>Evaluated Data</h2>
               <ul>
@@ -192,37 +191,40 @@ const Details = () => {
               </ul>
             </section>
 
-            {/* Data Analysis Section */}
             <section className="data-analysis">
               <h2>Data Analysis</h2>
-              <ul>
-                {project.analysis.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+              <p>{project.analysis}</p>
             </section>
+          </section>
 
-            <section className="image-section">
-              <h2>Images</h2>
-              <div className="image-container" ref={imageRef}>
-                {project.images.map((img, index) => (
-                  <div key={index} className="image-wrapper">
-                    <img
-                      src={img}
-                      alt={`Project Screenshot ${index + 1}`}
-                      className="project-image"
-                    />
-                    {/* Add caption below each image */}
-                    <p className="image-caption">{project.captions[index]}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-          </div>
+          {/* Images Section */}
+          <aside className="image-section">
+            <h2>Images</h2>
+            <div className="image-grid">
+              {project.images.map((img, index) => (
+                <figure key={index} className="image-wrapper">
+                  <img
+                    src={img}
+                    alt={`Project Screenshot ${index + 1}`}
+                    className="project-image"
+                    onClick={() => openImageModal(img)}
+                  />
+                  <figcaption className="image-caption">{project.captions[index]}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </aside>
         </div>
-      </section>
-        <Footer />
+      </main>
+
+      {/* Modal for Image Preview */}
+      {selectedImage && (
+        <div className="modal" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} alt="Full View" />
+        </div>
+      )}
+
+      <Footer />
     </div>
   );
 };

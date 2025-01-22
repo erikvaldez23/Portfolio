@@ -6,9 +6,9 @@ import fitnessLogo from './24-logo.jpeg';
 
 const Experience = () => {
     return (
-        <div className="section" id="experience">
+        <div className="experience-ection" id="experience">
             <hr className="line" />
-            <h1>EXPERIENCE</h1>
+            <h1 className="header">EXPERIENCE</h1>
             <div className="experience-container">
                 <div className="experience-card">
                     <h2>Backend Developer</h2>

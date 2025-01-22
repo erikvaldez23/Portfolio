@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
-import ttuLogo from './ttu-logo.png'
-import elogo from './e-logo.webp'
+import ttuLogo from './ttu-logo.png';
+import elogo from './e-logo.webp';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -11,82 +11,76 @@ const Projects = () => {
     navigate(`/project-details/${projectId}`);
   };
 
+  // Project data with dynamic backgrounds
+  const projects = [
+    {
+      id: 1,
+      title: "The Impact of School Funding on Academic Performance",
+      description:
+        "Analyzed the impact of school funding disparities on student outcomes...",
+      background: ttuLogo, // Path to the background image
+    },
+    {
+      id: 2,
+      title: "Data-Driven Insights from an Exercise Contest",
+      description:
+        "Scraped data from an exercise leaderboard to analyze user metrics...",
+      background: ttuLogo,
+    },
+    {
+      id: 3,
+      title: "Energy Production and Vendor Analysis",
+      description:
+        "Focused on analyzing energy production data from various fields...",
+      background: elogo,
+    },
+    {
+      id: 4,
+      title: "Comparative Analysis of Smartphone Specifications",
+      description:
+        "Scraped and analyzed smartphone specifications from web sources...",
+      background: elogo,
+    },
+    {
+      id: 5,
+      title: "Personal Calendar SMS Reminder Service",
+      description:
+        "Developed an automated SMS notification system using Python...",
+      background: ttuLogo,
+    },
+    {
+      id: 6,
+      title: "Interactive Web App for CRUD Operations",
+      description:
+        "Built a responsive and interactive user table with React and Material-UI...",
+      background: elogo,
+    },
+  ];
+
   return (
     <div className="section" id="projects">
       <hr className="line" />
       <h1 className="header">PROJECTS</h1>
 
       <div className="projects-container">
-        {/* Project 1 */}
-        <div className="project-card">
-          <h2>The Impact of School Funding on Academic Performance</h2>
-          <p className="project-description">
-             This project analyzes the impact of school funding on student outcomes, highlighting disparities in Texas education and exploring connections to long-term success like college attendance and job opportunities.          </p>
-          <button onClick={() => handleSeeMore(1)} className="see-more-button">
-            See More Details
-          </button>
-          <img src={ttuLogo} alt="School Funding Logo" className="project-logo" />
-        </div>
-
-        {/* Project 2 */}
-        <div className="project-card">
-          <h2>Data-Driven Insights from an Exercise Contest</h2>
-          <p className="project-description">
-          This project scraped data from an exercise contest leaderboard to gather user metrics like sleep, water intake, and steps, using Python and BeautifulSoup to clean and structure the data for trend analysis.
-          </p>
-          <button onClick={() => handleSeeMore(2)} className="see-more-button">
-            See More Details
-          </button>
-          <img src={ttuLogo} alt="Exercise Contest Logo" className="project-logo" />
-        </div>
-
-        {/* Project 3 */}
-        <div className="project-card">
-          <h2>Energy Production and Vendor Analysis</h2>
-          <p className="project-description">
-            This project focuses on analyzing energy production data from various fields and vendors...
-          </p>
-          <button onClick={() => handleSeeMore(3)} className="see-more-button">
-            See More Details
-          </button>
-          <img src={ttuLogo} alt="Energy Production Logo" className="project-logo" />
-        </div>
-
-        {/* Project 4 */}
-        <div className="project-card">
-          <h2>Comparative Analysis of Smartphone Specifications</h2>
-          <p className="project-description">
-          This project involved scraping and analyzing smartphone specifications from various web sources, organizing key features like camera quality, battery life, and storage into a structured format for easy comparison.
-          </p>
-          <button onClick={() => handleSeeMore(4)} className="see-more-button">
-            See More Details
-          </button>
-          <img src={ttuLogo} alt="Smartphone Logo" className="project-logo" />
-        </div>
-
-           {/* Project 5 */}
-           <div className="project-card">
-          <h2>Personal Calendar SMS Reminder Service</h2>
-          <p className="project-description">
-            Developed an automated SMS notification system using Python, cron, and Textbelt API to send daily reminders for due assignments, streamlining communication and ensuring timely alerts without manual intervention.         
-          </p>
-          <button onClick={() => handleSeeMore(5)} className="see-more-button">
-            See More Details
-          </button>
-          <img src={elogo} alt="Smartphone Logo" className="project-logo" />
-        </div>
-
-        {/* Project 6 */}
-        <div className="project-card">
-          <h2>Interactive Web App for CRUD Operations</h2>
-          <p className="project-description">
-              A responsive and interactive user table built with React and Material-UI, featuring dynamic data display, customizable pagination, and CRUD functionality to efficiently manage user information.         
-          </p>
-          <button onClick={() => handleSeeMore(6)} className="see-more-button">
-            See More Details
-          </button>
-          <img src={elogo} alt="Smartphone Logo" className="project-logo" />
-        </div>
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="project-card"
+            style={{ backgroundImage: `url(${project.background})` }}
+          >
+            <div className="project-card-content">
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+              <button
+                onClick={() => handleSeeMore(project.id)}
+                className="see-more-button"
+              >
+                See More Details
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

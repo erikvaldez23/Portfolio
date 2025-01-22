@@ -1,7 +1,7 @@
 /* Section Styling */
 #experience {
   padding: 60px 20px;
-  background-color: #f9f9f9; /* Lighter background for better contrast */
+  background-color: #000; /* Lighter background for better contrast */
   text-align: center;
 }
 
@@ -12,20 +12,21 @@
   justify-content: center;
   gap: 20px;
   padding-top: 30px;
+  text-align: center;
+  background-color: #000; /* Lighter background for better contrast */
+  padding: 60px 20px;
 }
 
 /* Experience Card */
 .experience-card {
   position: relative; /* Needed for absolute positioning inside the card */
-  background-color: white;
+  background-color: #000;
   padding: 27px;
   width: 345px; /* Default width for larger screens */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
-  background: linear-gradient(135deg, #fff, #f7f7f7);
-  border: 1px solid #ddd;
+  border: 5px solid #fff;
 }
 
 /* Company Logo */
@@ -53,13 +54,18 @@
 .experience-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #666;
+  color: #fff;
 }
 
 .experience-card .date {
   font-size: 0.9rem;
   font-style: italic;
-  color: #999; /* Even lighter tone */
+  color: #f9f9f9; /* Even lighter tone */
+}
+
+.experience-card p {
+  font-size: 0.9rem;
+  color: #fff; /* Even lighter tone */
 }
 
 /* Responsive Styling for Mobile Devices */

@@ -1,167 +1,76 @@
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/background6.jpeg') no-repeat center center/cover;
-  height: 80vh;
-  display: flex; 
+  background: linear-gradient(
+      to bottom, 
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), /* Existing overlay */
+    linear-gradient(
+      to bottom, 
+      rgba(0, 0, 0, 0) 70%, 
+      rgba(0, 0, 0, 1) 100%
+    ), /* New gradient to black */
+    url("/red-hero.jpg") no-repeat center center / cover;
+  height: 90vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
   position: relative;
-  overflow-x: hidden; /* Prevent any horizontal overflow */
+  overflow-x: hidden;
+}
+
+/* Hero Name */
+.hero-name {
+  font-size: 2rem; /* Small text size */
+  font-family: 'Raleway', sans-serif; /* Match the font of the rest of the Hero */
+  font-weight: 300; /* Lighter font weight for subtle emphasis */
+  color: #fff; /* Lighter gray for subtlety */
+  margin-bottom: 10px; /* Add spacing below the name */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+  animation-delay: 0.1s; /* Delay slightly after the Hero appears */
+  font-family: "Raleway";
+}
+
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
 }
 
 .hero-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;  /* Default desktop layout */
+  flex-direction: column; /* Stack content vertically */
   text-align: center;
 }
 
-.profile-image {
-  width: 100%;          /* Make image scale dynamically */
-  max-width: 200px;      /* Set a max width for larger screens */
-  border-radius: 50%;    /* Make the image round */
-  margin-bottom: 50px;   /* Add spacing between the image and the quote */
-  margin-left: 25px;
-}
-
-.quote {
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.right-content {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: -50px;
-  max-width: 100%; /* Ensure the content doesn't overflow */
-}
-
-@media (max-width: 768px) {
-  .hero {
-    background: black;
-    min-height: 100vh; /* Full viewport height */
-    padding: 40px 20px 20px; /* Increase top padding to push content lower */
-    display: flex;
-    flex-direction: column; /* Ensure content stacks properly */
-    justify-content: flex-start; /* Align content lower */
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px; /* Push content further down */
-  }
-
-  .profile-image {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 30px; /* Add more space below the image */
-    margin-top: 20px; /* Push the image down */
-  }
-
-  .quote {
-    margin-bottom: 40px; /* Add more space below the quote */
-  }
-
-  .quote h1 {
-    font-size: 1.8rem;
-    white-space: normal;
-    margin-bottom: 20px; /* Add space below the text */
-  }
-
-  .right-content {
-    display: none;
-  }
-
-  .social-icons a {
-    font-size: 1.8rem; /* Set a consistent size for all icons */
-    width: 60px; /* Define a fixed width */
-    height: 60px; /* Define a fixed height */
-    display: flex; /* Align icons properly */
-    justify-content: center;
-    align-items: center;
-    text-decoration: none; /* Remove underline if any */
-  }
-
-  .social-icons a i, 
-  .social-icons a svg {
-    font-size: inherit; /* Ensure icons inherit size from their container */
-    width: 100%; /* Prevent scaling issues */
-    height: 100%;
-  }
-}
-
-
 .quote h1 {
-  font-size: 2.8rem;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-family: "Raleway";
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  white-space: nowrap; /* Prevent wrapping on larger screens */
-  border-right: 0.15em solid white;
-  width: 0;
-  animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  margin: 0;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+}
+
+.highlight {
+  color: #df4747; /* Red for "innovation" */
+  font-weight: bold;
 }
 
 .subline {
-  font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-family: 'Raleway';
   margin-top: 10px;
   margin-left: -35px;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  opacity: 0;
+  opacity: 0; /* Start hidden */
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 3.5s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
-}
-
-.cta-btn {
-  background-color: #df4747;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-btn:hover {
-  background-color: #c73535;
-}
-
-.about-photos {
-  flex: 0 0 400px;
-  text-align: right;
-}
-
-.about-photos img {
-  max-width: 100%;
-  height: auto;
+  animation-delay: 1.5s;
 }
 
 .social-icons-container {
@@ -175,7 +84,7 @@
   gap: 15px;
   opacity: 0; /* Start hidden */
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 4s; /* Delay to make it appear after the subline */
+  animation-delay: 2s; /* Delay to make it appear after the quote */
 }
 
 .social-icons a {
@@ -184,6 +93,25 @@
 }
 
 .social-icons a:hover {
-  color: #df4747; /* Change to a color that matches your theme */
+  color: #df4747; /* Highlight hover color */
   cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .subline {
+    font-size: 1.2rem;
+  }
 }

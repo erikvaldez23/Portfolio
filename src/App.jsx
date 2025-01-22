@@ -18,7 +18,7 @@ import Cert from './components/certs/Cert'
 
 const App = () => {
   return (
-    <Router >
+    <Router basename="/Portfolio">
       <ScrollToTop />
       <div className="App">
         <Routes>

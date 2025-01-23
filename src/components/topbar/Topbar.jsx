@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import Resume from "./Valdez.Resume.pdf";
@@ -6,9 +6,25 @@ import "./Topbar.css";
 
 const Topbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
+  const menuRef = useRef(null); // Ref for the menu container
   const location = useLocation();
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  // Close the menu when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   const scrollAfterRouting = (sectionId) => {
     setTimeout(() => {
@@ -19,7 +35,7 @@ const Topbar = () => {
 
   return (
     <div className="topbar-container">
-      <nav className="topbar">
+      <nav className="topbar" ref={menuRef}>
         <button
           className="hamburger-menu"
           onClick={toggleMenu}
@@ -67,7 +83,7 @@ const Topbar = () => {
                 Projects
               </ScrollLink>
             ) : (
-              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+              <RouterLink to="/" onClick={() => scrollAfterRouting("projects")}>
                 Projects
               </RouterLink>
             )}
@@ -78,7 +94,7 @@ const Topbar = () => {
                 Certifications
               </ScrollLink>
             ) : (
-              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
+              <RouterLink to="/" onClick={() => scrollAfterRouting("certificate")}>
                 Certifications
               </RouterLink>
             )}
@@ -89,34 +105,11 @@ const Topbar = () => {
                 Organizations
               </ScrollLink>
             ) : (
-              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
-               Organizations
+              <RouterLink to="/" onClick={() => scrollAfterRouting("orgs")}>
+                Organizations
               </RouterLink>
             )}
           </li>
-          <li>
-            {location.pathname === "/" ? (
-              <ScrollLink to="experience" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
-                Experience
-              </ScrollLink>
-            ) : (
-              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
-                Experience
-              </RouterLink>
-            )}
-          </li>
-          
-          {/* <li>
-            {location.pathname === "/" ? (
-              <ScrollLink to="courses" smooth={true} duration={500} onClick={() => setMenuOpen(false)}>
-                Courses
-              </ScrollLink>
-            ) : (
-              <RouterLink to="/" onClick={() => scrollAfterRouting("experience")}>
-                Courses
-              </RouterLink>
-            )}
-          </li> */}
           <li>
             <a href={Resume} download="Valdez-Resume.pdf" onClick={() => setMenuOpen(false)}>
               Resume

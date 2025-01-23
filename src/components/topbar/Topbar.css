@@ -26,8 +26,8 @@
   display: none; /* Hidden by default */
   position: absolute; /* Position it relative to the topbar */
   top: 50%; /* Center vertically within the topbar */
-  right: 20px; /* Align to the right edge with padding */
   transform: translateY(-50%); /* Adjust for vertical centering */
+  right: -20px;
   background: none;
   border: none;
   color: white;

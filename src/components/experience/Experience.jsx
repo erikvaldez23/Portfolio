@@ -11,7 +11,7 @@ const Experience = () => {
             <h1 className="header">EXPERIENCE</h1>
             <div className="experience-container">
                 <div className="experience-card">
-                    <h2>Backend Developer</h2>
+                    <h2>Web / Backend Developer</h2>
                     <h3>Adonai Innovations</h3>
                     <p className="date">August 2024 - Present</p>
                     <p>Developed backend solutions with Node.js, Express, and worked with MongoDB for dynamic data management.</p>

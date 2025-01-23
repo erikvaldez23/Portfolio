@@ -27,7 +27,7 @@
   position: absolute; /* Position it relative to the topbar */
   top: 50%; /* Center vertically within the topbar */
   transform: translateY(-50%); /* Adjust for vertical centering */
-  right: -20px;
+  right: -15px;
   background: none;
   border: none;
   color: white;
@@ -97,6 +97,8 @@
     padding: 10px 16px;
   }
 }
+
+
 
 /* Adjust hover styles for mobile */
 @media (hover: none) {

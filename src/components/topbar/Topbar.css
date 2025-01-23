@@ -41,7 +41,7 @@
   cursor: pointer;
   z-index: 1001;
   position: absolute; /* Position independently */
-  left: 20px; /* Align it to the left of the topbar */
+  right: -20px; /* Align it to the left of the topbar */
 }
 
 /* Individual links */

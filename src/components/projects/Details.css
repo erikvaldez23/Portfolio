@@ -224,6 +224,9 @@ footer {
   .project-image {
     max-width: 100%; /* Scale images to fit within their container */
   }
+  .back-button{
+    display:none;
+  }
 }
 
 
@@ -255,5 +258,8 @@ footer {
   .modal img {
     max-width: 100%; /* Utilize full width for smaller screens */
     max-height: 70%;
+  }
+  .back-button {
+    display:none;
   }
 }

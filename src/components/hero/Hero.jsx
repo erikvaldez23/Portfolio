@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <div className="hero" id="hero">
       <div className="hero-content">
         <div className="left-content">
           <div className="quote">

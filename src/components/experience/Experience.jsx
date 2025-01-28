@@ -15,9 +15,9 @@ const Experience = () => {
                     <h3>Adonai Innovations</h3>
                     <p className="date">August 2024 - Present</p>
                     <p>Developed backend solutions with Node.js, Express, and worked with MongoDB for dynamic data management.</p>
-                    {/* <a href="https://www.adonai-innovations.com" target="_blank" rel="noopener noreferrer"> */}
+                    <a href="https://adonaiinnovations.com" target="_blank" rel="noopener noreferrer" >
                         <img src={adonaiLogo} alt="Adonai Innovations Logo" className="company-logo" />
-                    {/* </a> */}
+                    </a>
                 </div>
                 <div className="experience-card">
                     <h2>Software Engineer Intern</h2>

@@ -18,29 +18,29 @@ const projects = [
     title: "School Funding vs. Academic Performance",
     description:
       "Explored how disparities in school funding influence key student performance metrics, uncovering actionable insights to address educational inequities.",
-    background: ttuLogo, // Path to the background image
+    background: ttuLogo, 
   },
-  {
-    id: 2,
-    title: "Insights from an Exercise Contest",
-    description:
-      "Analyzed user performance data from a fitness contest leaderboard, providing insights into health habits like sleep, hydration, and activity trends.",
-    background: ttuLogo,
-  },
+  // {
+  //   id: 2,
+  //   title: "Insights from an Exercise Contest",
+  //   description:
+  //     "Analyzed user performance data from a fitness contest leaderboard, providing insights into health habits like sleep, hydration, and activity trends.",
+  //   background: ttuLogo,
+  // },
   {
     id: 3,
-    title: "Energy Production and Vendor Analysis",
+    title: "Adonai Innovations Website",
     description:
-      "Evaluated energy production efficiency and vendor contributions to identify opportunities for maximizing revenue and optimizing processes.",
+      "Designed and developed a modern website for Adonai Innovations, showcasing its services and enhancing its online presence.",
     background: elogo,
   },
-  {
-    id: 4,
-    title: "Analysis of Smartphone Specifications",
-    description:
-      "Scraped and organized smartphone specifications to enable direct comparisons of features such as performance, battery life, and camera quality.",
-    background: elogo,
-  },
+  // {
+  //   id: 4,
+  //   title: "Analysis of Smartphone Specifications",
+  //   description:
+  //     "Scraped and organized smartphone specifications to enable direct comparisons of features such as performance, battery life, and camera quality.",
+  //   background: elogo,
+  // },
   {
     id: 5,
     title: "Personal Calendar SMS Reminder Service",

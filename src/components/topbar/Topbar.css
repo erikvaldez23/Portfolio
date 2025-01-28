@@ -1,95 +1,135 @@
-/* Add this at the top of your CSS file */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 /* Topbar container */
 .topbar-container {
   position: sticky;
   top: 0;
-  width: 100vw;
-  background-color: black;
+  width: 100%;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Transparent navbar */
+.topbar-container.transparent {
+  background-color: transparent; /* Fully transparent */
+  box-shadow: none; /* Remove shadow */
+}
+
+/* Black navbar */
+.topbar-container.black {
+  background-color: black; /* Solid black */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Topbar */
 .topbar {
   width: 100%;
-  max-width: 1200px; /* Limit width on larger screens */
+  max-width: 1700px; /* Adjusted max width */
   display: flex;
   align-items: center;
-  justify-content: center; /* Center links horizontally */
+  justify-content: space-between; /* Space between logo and hamburger menu */
   padding: 10px 20px;
-  
 }
 
-/* Links container */
-.topbar-links {
+.logo {
+  max-width: 60px; /* Adjust max width as needed */
+  max-height:70px; /* Adjust max height as needed */
   display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures any excess image is hidden */
+}
+
+/* Logo Image */
+.logo img {
+  width: 100%; /* Scale the image to fit the container width */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: contain; /* Ensure the image fits nicely within the container */
+}
+
+.logo img:hover {
+  transform: scale(0.9); /* Slightly enlarge the image on hover */
+  cursor: pointer;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Topbar Links Container */
+.topbar-links {
+  display: none; /* Hidden by default (for hamburger menu) */
+  flex-direction: row; /* Align links horizontally */
   list-style: none;
   margin: 0;
   padding: 0;
   gap: 20px; /* Add spacing between links */
 }
 
-/* Hamburger menu (for mobile) */
-.hamburger-menu {
-  display: none; /* Hide by default */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1001;
-  position: absolute; /* Position independently */
-  right: -20px; /* Align it to the left of the topbar */
+/* Show links when hamburger menu is open */
+.topbar-links.open {
+  display: flex; /* Make visible */
+  flex-direction: column; /* For mobile view (vertical alignment) */
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  z-index: 1000;
 }
 
-/* Individual links */
+/* Link Styles */
+.topbar-links li {
+  margin: 0;
+  padding: 0;
+}
+
 .topbar-links li a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  padding: 8px 16px;
-  transition: color 0.3s, background-color 0.3s, transform 0.3s;
-  font-size: 1.2rem;
-  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Use modern font */
+  font-weight: 500; /* Medium weight */
+  font-size: 1rem; /* Adjust font size */
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underlines */
+  padding: 8px 16px; /* Add padding for better click area */
+  border-radius: 5px; /* Rounded corners for hover effect */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
 }
 
+/* Hover Effect */
 .topbar-links li a:hover {
-  color: #fff;
-  border: 5px solid white;
-  border-radius: 10px;
+  background-color: #007bff; /* Highlight with a professional blue */
+  color: white; /* Keep text white */
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.4); /* Subtle shadow effect */
+  transform: translateY(-2px); /* Slight "lift" effect */
   cursor: pointer;
 }
 
-/* Responsive styles for mobile */
+/* Responsive Behavior for Mobile */
 @media (max-width: 768px) {
-  .hamburger-menu {
-    display: block; /* Show hamburger menu */
-  }
-
-  .topbar {
-    justify-content: space-between; /* Align hamburger and links */
-  }
-
   .topbar-links {
-    display: none;
-    flex-direction: column;
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Vertical alignment */
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 10px;
-    background-color: black;
-    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 200px; /* Set fixed width for mobile dropdown */
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
   }
 
@@ -98,11 +138,15 @@ html, body {
   }
 
   .topbar-links li {
-    margin: 10px 0;
+    margin-bottom: 10px; /* Spacing between links in dropdown */
+  }
+
+  .topbar-links li:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
   }
 
   .topbar-links li a {
     font-size: 1rem;
-    padding: 10px 16px;
+    padding: 10px 20px;
   }
 }

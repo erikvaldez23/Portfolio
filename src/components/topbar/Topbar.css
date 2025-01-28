@@ -149,4 +149,9 @@
     font-size: 1rem;
     padding: 10px 20px;
   }
+
+  .logo {
+    max-width: 50px;
+    max-height: 60px;
+  }
 }

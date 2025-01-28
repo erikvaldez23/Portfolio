@@ -73,6 +73,7 @@
   right: 20px; /* Adjust the spacing as needed */
   width: 40px;
   height: auto;
+  border-radius: 10px;
 }
 
 /* View Certificate Button */

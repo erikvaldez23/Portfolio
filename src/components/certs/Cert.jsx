@@ -1,6 +1,6 @@
 import React from "react";
 import "./Cert.css";
-import logo from './codecademy.svg';
+import logo from './codecademy.png';
 import pythonCert from './Python3-Cert.pdf';
 import commandLineCert from './command-line-cert.pdf';
 import bashCert from './bash-scripting-cert.pdf';

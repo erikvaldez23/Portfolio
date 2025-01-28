@@ -12,8 +12,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p>
-          I am a passionate software developer currently pursuing a Bachelor's in Information Technology with a focus on systems at Texas Tech University, set to graduate in May 2025. Based in Dallas, Texas, I bring a proactive, solutions-driven mindset to my work, excelling in both front-end and back-end development. 
-          My experience spans operating systems like Unix and Linux, enabling me to handle projects from conception to deployment. I thrive in fast-paced environments where I can leverage my skills to build efficient, scalable solutions that drive real impact. I'm eager to apply my technical expertise to innovative projects and make an immediate contribution in the tech industry.
+          Hi there, I’m Erik Valdez, a driven and passionate software developer from Dallas, Texas, currently pursuing a Bachelor's degree in Information Technology with a concentration in Systems at Texas Tech University. With an expected graduation date of May 2025, I have honed my skills in full-stack web development, automation, and data analysis through both academic projects and hands-on professional experiences. I’m proud to have contributed to innovative projects during my internship at Texas Instruments and through roles at companies like Adonai Innovations. My journey has been fueled by a strong curiosity for technology and a commitment to problem-solving in meaningful ways.
           </p>
         </div>
       </div>

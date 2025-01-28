@@ -5,7 +5,7 @@
 
 .about-container {
   padding: 30px 15px;
-  margin: 0 auto;
+  margin: 0 auto; /* Move container to the left */
   max-width: 1400px; /* Restrict max width for better alignment */
   width: 100%; /* Ensure it spans the full width of the parent */
   border-radius: 10px;

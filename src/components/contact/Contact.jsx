@@ -1,82 +1,61 @@
-// import React from 'react';
-// import './Contact.css';
-
-// const Contact = () => {
-//   return (
-//     <div className="contact-section">
-//   <div className="contact-left">
-//     <h2 className="header">Contact Me</h2>
-//     <form className="contact-form">
-//       <div className="form-group">
-//         <input type="text" id="name" name="name" placeholder="Name" required />
-//       </div>
-//       <div className="form-group">
-//         <input type="email" id="email" name="email" placeholder="Email" required />
-//       </div>
-//       <div className="form-group">
-//         <textarea id="message" name="message" placeholder="Message" required></textarea>
-//       </div>
-//       <button type="submit" className="submit-button">Send Message</button>
-//     </form>
-//   </div>
-
-
-//   <div className="contact-info">
-//   <p>Here is a good place to contact me!</p>
-//   <ul>
-//     <li>
-//       <a href="mailto:erikkvaldez@gmail.com" target="_blank" rel="noopener noreferrer">
-//         <i className="fas fa-envelope"></i> erikkvaldez@gmail.com
-//       </a>
-//     </li>
-//     <li>
-//       <a href="https://www.instagram.com/erikvaldez_/" target="_blank" rel="noopener noreferrer">
-//         <i className="fab fa-instagram"></i> @erikvaldez_
-//       </a>
-//     </li>
-//     <li>
-//       <a href="https://github.com/erikvaldez23" target="_blank" rel="noopener noreferrer">
-//         <i className="fab fa-github"></i> erikvaldez23
-//       </a>
-//     </li>
-//   </ul>
-// </div>
-//   </div>
-
-//   );
-// };
-
-// export default Contact;
-
-import React from 'react';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
-import './Contact.css'; // Add your CSS file for styling
+import React from "react";
 
 const Contact = () => {
   return (
-    <div className="contact-section">
-      <hr className="contact-line" />
-      <h2>Contact</h2>
-      <p>Get in touch or shoot me an email directly on <a href="mailto:erikkvaldez@gmail.com">erikkvaldez@gmail.com</a></p>
-      
-      <div className="social-icons">
-        <a href="mailto:erikkvaldez@gmail.com" target="_blank" rel="noopener noreferrer">
-          <FaEnvelope className="icon" />
-        </a>
-        <a href="https://linkedin.com/in/erik-valdez23" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="icon" />
-        </a>
-        <a href="https://github.com/erikvaldez23" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="icon" />
-        </a>
-        <a href="https://www.instagram.com/erikvaldez_/" target="_blank" rel="noopener noreferrer">
-          <FaInstagram className="icon" />
-        </a>
-      </div>
+    <div className="contact-container">
+      <h2 className="contact-title">Contact</h2>
+      <p className="contact-subtitle">
+        Feel free to reach out—let’s connect and explore how we can collaborate on exciting projects!
+      </p>
+      <div className="contact-content">
+        {/* Left Section: Contact Information */}
+        <div className="contact-info">
+          <div className="info-item">
+            <span className="icon">📍</span>
+            <div>
+              <h3>Location</h3>
+              <p>Texas Tech University <br /> Lubbock, TX</p>
+            </div>
+          </div>
+          <div className="info-item">
+            <span className="icon">📞</span>
+            <div>
+              <h3>Call Me</h3>
+              <p>(469) 386-7877</p>
+            </div>
+          </div>
+          <div className="info-item">
+            <span className="icon">📧</span>
+            <div>
+              <h3>Email Me</h3>
+              <p>erikkvaldez@gmail.com</p>
+            </div>
+          </div>
+          {/* Embedded Google Map */}
+          <iframe
+            className="map"
+            title="Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.8299093627054!2d-101.87574318480378!3d33.58456264833109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fe08c7a244e717%3A0x6c8a2df178b8e2f1!2sTexas%20Tech%20University!5e0!3m2!1sen!2sus!4v1632897641513!5m2!1sen!2sus"
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
 
-      <p className="credits">Design & Developed by Erik Valdez</p>
+        {/* Right Section: Contact Form */}
+        <div className="contact-form">
+          <form>
+            <div className="input-group">
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+            </div>
+            <input type="text" placeholder="Subject" required />
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Contact;

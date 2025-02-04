@@ -15,6 +15,7 @@ import Details from './components/projects/Details';
 import ScrollToTop from './components/scroll/ScrollToTop';
 import Orgs from './components/orgs/Orgs';
 import Cert from './components/certs/Cert'
+import Contact from './components/contact/Contact';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
                 <Cert />
                 <Orgs />
                 {/* <Courses /> */}
+                {/* <Contact /> */}
                 <Footer />
               </>
             } 

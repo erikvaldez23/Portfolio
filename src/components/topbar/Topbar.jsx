@@ -14,16 +14,18 @@ const Topbar = () => {
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
+    const heroSection = document.getElementById("hero");
+    if (!heroSection) return;
+  
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsHeroInView(entry.isIntersecting),
+      { threshold: 0 }  // Trigger as soon as scrolling starts
+    );
+  
+    observer.observe(heroSection);
+    return () => observer.disconnect();
   }, []);
+  
 
   useEffect(() => {
     const heroSection = document.getElementById("hero");

@@ -13,15 +13,16 @@
 
 /* Transparent navbar */
 .topbar-container.transparent {
-  background-color: transparent; /* Fully transparent */
-  box-shadow: none; /* Remove shadow */
+  background-color: transparent;
+  box-shadow: none;
 }
 
 /* Black navbar */
 .topbar-container.black {
-  background-color: black; /* Solid black */
+  background-color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Topbar */
 .topbar {

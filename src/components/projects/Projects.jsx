@@ -34,13 +34,13 @@ const projects = [
       "Designed and developed a modern website for Adonai Innovations, showcasing its services and enhancing its online presence.",
     background: elogo,
   },
-  // {
-  //   id: 4,
-  //   title: "Analysis of Smartphone Specifications",
-  //   description:
-  //     "Scraped and organized smartphone specifications to enable direct comparisons of features such as performance, battery life, and camera quality.",
-  //   background: elogo,
-  // },
+  {
+    id: 4,
+    title: "Calendar Mobile App",
+    description:
+      "Created a mobile app for managing personal calendars, enabling users to efficiently track and organize their schedules.",
+    background: elogo,
+  },
   {
     id: 5,
     title: "Personal Calendar SMS Reminder Service",

@@ -14,6 +14,8 @@ import image10 from "./CalendarSS.png";
 import image11 from "./SMS-SS.png";
 import image12 from "./crud-table.png";
 import image13 from "./add-user.png";
+import image14 from "./mobile-app.png";
+import image15 from "./mobile-app-create.png";
 import TopBar from "../topbar/Topbar";
 import Footer from "../footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,23 +29,21 @@ const projectData = {
     technologies: ["Javascript", "React", "CSS", "Node.js", "Git", "GitHub"],
     images: [image7, image6, image],
     captions: [
-      "Financial Dataset for PlanoISD 2021 provided by the Texas Education Agency",
-      "Cleaned Datafame with just Total Revenue and Total Expenditures calculated for every school district between the years 2017-2021",
-      "Final Dataframe with all specified infrormation for a total of 10 school district across the years 2017-2021",
+      "",
     ],
     evaluatedData: [
-      "SAT and ACT scores are key metrics for college admissions, reflecting students' academic readiness.",
-      "Graduation rates measure the effectiveness of educational programs and interventions.",
-      "Dropout rates highlight challenges such as academic struggles and socioeconomic factors.",
-      "Median household income reflects the socioeconomic status of communities and affects educational access and opportunities.",
-      "Tax rates influence school funding, impacting staffing, facilities, and resources.",
+      "Page Load Time",
+      "Bounce Rate",
+      "Average Session Duration",
+      "User Feedback",
+      "Conversion Rate",
+      "Mobile Responsiveness",
     ],
     analysis: [
-      "The data we collected was mostly complete, except for missing standardized test scores (SAT/ACT) from Post. \
-        The financial data initially lacked coherence and required extensive cleaning. We organized the cleaned data into Excel, separating financial data into different panels due to its volume. \
-        Our datasets, covering 2018-2022, include numerical and categorical data (e.g., Float64, object, string). Financial and academic data came from the Texas Education Agency, while home values were sourced from Zillow and sales tax data from the Federal Reserve of St. Louis. \
-        Key variables like year and district were crucial for merging datasets. Initial challenges included handling string values, dollar signs, and commas, which hindered analysis until corrected. Additionally, the job placement data was difficult to analyze due to incomplete information. \
-        Our datasets comprise 50 CSVs for finance, 1 for household income, 1 for home value, 10 for academic data, 1 for job placement, and 1 for sales tax.",
+      "The primary goal of this project was to create a responsive, user-friendly website that effectively showcased TintTek's services and enhanced its online presence. During the development process, I focused on ensuring a seamless user experience through intuitive navigation, modern design elements, and clear content structure.",
+      "One of the key challenges was optimizing the website for both desktop and mobile devices to provide a consistent experience across all screen sizes. To address this, I utilized CSS media queries and a flexible layout design, ensuring responsiveness and accessibility. Additionally, integrating dynamic features such as client-side routing with React Router and interactive UI elements required careful planning and testing to maintain performance and usability.",
+      "Through this project, I successfully delivered a polished and professional website that aligns with the brand's identity and effectively communicates its mission to users. The experience allowed me to refine my skills in frontend development, responsive design, and problem-solving while delivering a product that meets both functional and aesthetic goals.",
+      "The website is hosted on GitHub Pages, providing a reliable and accessible platform for users to explore TintTek's offerings. The deployment process involved configuring the repository for static site hosting, ensuring that all assets were correctly linked and optimized for performance.",
     ],
   },
   2: {
@@ -103,38 +103,38 @@ const projectData = {
     ],
   },
   4: {
-    title: "Comparative Analysis of Smartphone Specifications",
-    introduction: [
-      "This project involved analyzing the specifications of various smartphones by scraping data from web sources, cleaning and organizing the information, and outputting it into a structured format for comparison.\
-     The goal was to provide an accessible, detailed overview of key smartphone models, allowing users to easily compare different features such as camera capabilities, battery life, storage, and more.",
-      "Using web scraping techniques, I gathered product information from multiple sources, including technical specifications, and product descriptions. After consolidating and cleaning the data, I structured it into a CSV file for further analysis. \
-     This project not only enhanced my skills in data extraction and processing but also provided valuable insights into the smartphone market by allowing for direct comparisons of key product features.",
-    ],
+    title: "Smart Task Manager: A Personal Calendar Companion",
+    introduction:
+      "This project involved developing a mobile calendar companion app using React Native and Node.js to help users efficiently track and manage their assignments, deadlines, and reminders. \
+      The app allows users to add, edit, update, and delete assignments, ensuring that their schedules remain organized. Additionally, automated notifications are triggered when an assignment due date approaches, helping users stay on top of their tasks. \
+      The project leverages SQLite3 for local storage, providing an offline-accessible solution for managing task data. By implementing push notifications, users receive timely reminders about upcoming due dates. This project enhanced my skills in full-stack mobile development, \
+      state management, and working with offline databases, as well as integrating notification services for user engagement.",
     technologies: [
-      "Python",
-      "Web Scraping",
-      "Data Cleaning",
-      "Data Parsing",
-      "CSV Modules",
-      "Requests",
-      "BeautifulSoup",
-      "Throttling",
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "SQLite3",
+      "Push Notifications",
+      "REST API",
+      "React Navigation",
+      "Cron Jobs",
     ],
-    images: [image5, image4],
+    images: [image14, image15],
     captions: [
-      "Phone Details Page for Galaxy S20 5G",
-      "Final CSV with all specified data for all phones",
+      "Main dashboard displaying upcoming assignments",
+      "Notification reminding the user of an upcoming due date",
     ],
-    evaluatedData: ["Galaxy S20 5G", "iPhone 11 Pro", "Google Pixel 4a"],
+    evaluatedData: ["CRUD Operations", "Reminders & Notifications", "Offline Data Storage"],
     analysis: [
-      "In this project, I employed a web scraping technique to extract detailed specifications for multiple smartphones, including the Galaxy S20 5G, from various online sources. \
-      The data included product specifications such as camera details, storage capacity, and battery life. Once the raw data was scraped, I focused on cleaning and standardizing the data, \
-      ensuring consistency across different data points by eliminating duplicates and handling missing or incomplete information.",
-      "The cleaned data was then merged into a single dataset, allowing me to conduct meaningful comparisons between different smartphone models. I performed data analysis by categorizing features (e.g., camera specifications, battery life, storage capacity), \
-      allowing for an easy comparison between different phone models. The final output was structured into a CSV file, making it readily available for further analysis or visualization.",
-      "Through this process, I was able to identify key differences in product features, such as varying camera resolutions, battery capacities, and storage options, providing valuable insights into consumer options in the smartphone market.",
+      "The backend was developed using Node.js with Express.js to handle RESTful API requests for storing, updating, and deleting assignments in an SQLite3 database. \
+      A background scheduling system using cron jobs ensures that upcoming due dates trigger push notifications for users.",
+      "The frontend was built using React Native, with React Navigation for seamless movement between the task list, task creation, and settings screens. \
+      Context API (or Redux) was used to manage state efficiently, ensuring smooth interactions across the app.",
+      "The project also focused on performance optimization, implementing throttling techniques to optimize API calls and using efficient database queries to minimize lag and load times. \
+      Through this process, I gained hands-on experience with mobile development, state management, and integrating backend services for real-time notifications.",
     ],
   },
+
   5: {
     title: "Personal Calendar SMS Reminder Service",
     introduction: [

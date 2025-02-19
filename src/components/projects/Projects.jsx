@@ -15,9 +15,9 @@ const Projects = () => {
 const projects = [
   {
     id: 1,
-    title: "School Funding vs. Academic Performance",
+    title: "TintTek Website",
     description:
-      "Explored how disparities in school funding influence key student performance metrics, uncovering actionable insights to address educational inequities.",
+      "Developed a responsive website for TintTek, enhancing user experience and showcasing their services effectively.",
     background: ttuLogo, 
   },
   // {

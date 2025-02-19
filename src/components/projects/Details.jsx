@@ -21,18 +21,10 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const projectData = {
   1: {
-    title: "The Impact of School Funding on Academic Performance",
+    title: "TintTek Website",
     introduction:
-      "Our project investigates the correlation between increased school funding and academic performance by examining standardized test scores, dropout rates, and graduation rates across various districts.\
-     We also analyze demographic factors, such as socioeconomic status, race, and geographic location, to identify what significantly impacts student success. Through visualizing these connections, our aim is to provide data-driven insights that highlight \
-     the true effects of educational funding on academic outcomes, offering an objective perspective on efforts to reduce educational disparities and promote equitable opportunities for all students across Texas.",
-    technologies: [
-      "Python",
-      "Pandas",
-      "Data Cleaning",
-      "Data Merging",
-      "Matplotlib",
-    ],
+      "Developed a responsive website for TintTek, enhancing user experience and showcasing their services effectively. The site features a modern design, intuitive navigation, and dynamic elements to engage users. Leveraging technologies like React, CSS, and modern web development practices, the project demonstrates my ability to create functional and visually appealing digital experiences tailored to client needs.",
+    technologies: ["Javascript", "React", "CSS", "Node.js", "Git", "GitHub"],
     images: [image7, image6, image],
     captions: [
       "Financial Dataset for PlanoISD 2021 provided by the Texas Education Agency",
@@ -237,13 +229,26 @@ const Details = () => {
           </section>
 
           {/* Images Section */}
+          {/* Images Section */}
           <aside className="image-section">
             <h2>Images</h2>
             {projectId === "3" ? (
               <div className="iframe-container">
                 <iframe
-                  src="https://adonaiinnovations.com" // Replace with the actual website URL
+                  src="https://adonaiinnovations.com" // Replace with actual Adonai website URL
                   title="Adonai Innovations Website"
+                  width="100%"
+                  height="900px"
+                  frameBorder="0"
+                  style={{ borderRadius: "8px" }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : projectId === "1" ? ( // Add iframe for TintTek website
+              <div className="iframe-container">
+                <iframe
+                  src="https://erikvaldez23.github.io/TintTek-Website/" // Replace with actual TintTek website URL
+                  title="TintTek Website"
                   width="100%"
                   height="900px"
                   frameBorder="0"

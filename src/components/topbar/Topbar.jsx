@@ -77,12 +77,12 @@ const NavItem = styled(motion.div)(({ theme }) => ({
     left: '50%',
     width: 0,
     height: '2px',
-    background: 'linear-gradient(90deg, rgba(201,180,154,0) 0%, rgba(201,180,154,1) 50%, rgba(201,180,154,0) 100%)',
+    background: '#df4747',
     transition: 'all 0.3s ease-in-out',
     transform: 'translateX(-50%)',
   },
   '&:hover': {
-    color: '#c9b49a',
+    color: '#df4747',
     '&::after': {
       width: '80%',
     },
@@ -91,10 +91,10 @@ const NavItem = styled(motion.div)(({ theme }) => ({
 
 // Mobile menu button
 const MenuButton = styled(IconButton)(({ theme }) => ({
-  color: '#c9b49a',
+  color: '#df4747',
   background: 'rgba(10, 10, 12, 0.6)',
   backdropFilter: 'blur(12px)',
-  border: '1px solid rgba(201,180,154,0.2)',
+  border: '1px solid #df4747',
   boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
   '&:hover': {
     background: 'rgba(20, 20, 22, 0.8)',
@@ -223,7 +223,7 @@ export default function Topbar() {
     >
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 1 }}>
         <IconButton 
-          sx={{ color: '#c9b49a' }}
+          sx={{ color: '#df4747' }}
           onClick={handleDrawerToggle}
         >
           <CloseIcon />
@@ -252,7 +252,7 @@ export default function Topbar() {
               sx={{ 
                 textAlign: 'center',
                 '.MuiTypography-root': {
-                  color: '#c9b49a',
+                  color: '#df4747',
                   fontWeight: 500,
                   letterSpacing: '1px',
                 }

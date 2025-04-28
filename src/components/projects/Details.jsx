@@ -165,6 +165,20 @@ const projectData = {
       "For the data analysis portion, utilized SQLite3 to query and analyze user data, identifying patterns and ensuring data integrity. Designed efficient database schemas and queries to support dynamic rendering on the frontend, while leveraging Node.js for processing and formatting data before serving it to the React UI. This ensured accurate and meaningful insights were displayed in the user management interface.",
     ],
   },
+  7: {
+    title: "Made 2 Move Physical Therapy Website",
+    introduction: [
+      "Developed a responsive, modern website for Made 2 Move Physical Therapy to enhance their online presence, showcase services, and improve client engagement through a user-friendly interface.",
+    ],
+    technologies: ["React", "Material-UI", "Node.js", "REST API"],
+    images: [image12, image13],
+    captions: ["Homepage design with service highlights", "Appointment booking interface"],
+    evaluatedData: ["No evaluated data availabel for this project"],
+    analysis: [
+      "The primary goal of this project was to design and develop a responsive, user-friendly website for Made 2 Move Physical Therapy that effectively highlighted the clinic's services and strengthened its online presence. Throughout the development process, I prioritized creating an accessible and welcoming experience, utilizing a clean layout, consistent branding, and intuitive navigation to guide users toward booking consultations and learning about the clinic's offerings."
+    ],
+  },
+  
 };
 const Details = () => {
   const { projectId } = useParams();
@@ -248,6 +262,19 @@ const Details = () => {
               <div className="iframe-container">
                 <iframe
                   src="https://erikvaldez23.github.io/TintTek-Website/" // Replace with actual TintTek website URL
+                  title="TintTek Website"
+                  width="100%"
+                  height="900px"
+                  frameBorder="0"
+                  style={{ borderRadius: "8px" }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) 
+             : projectId === "7" ? ( // Add iframe for TintTek website
+              <div className="iframe-container">
+                <iframe
+                  src="https://m2mdfw.com" 
                   title="TintTek Website"
                   width="100%"
                   height="900px"

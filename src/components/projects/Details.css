@@ -1,6 +1,6 @@
 /* Global Variables */
 :root {
-  --main-bg-color: #000; /* Change background to black */
+  --main-bg-color: "transparent"; /* Change background to black */
   --main-font-color: #fff; /* Change primary font color to white */
   --secondary-font-color: #d3d3d3; /* Use a lighter gray for secondary text */
   --accent-color: #df4747; /* Accent color remains the same */
@@ -21,23 +21,25 @@ body {
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the page spans at least the viewport height */
-  background-color: var(--main-bg-color); /* Match page background */
+  min-height: 100vh;
+  background-color: var(--main-bg-color);
+  margin-top: 80px; /* 👈 push content below the Topbar */
+}
+
+.project-details {
+  padding: 20px;
+  margin-top: 40px; /* 👈 ADD THIS if you want just project pages fixed */
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--main-bg-color);
 }
 
 main {
   flex: 1; /* Allow the main content to grow and fill available space */
-}
-
-/* Project Details Section */
-.project-details {
-  padding: 20px;
-  max-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--main-bg-color); /* Ensure black background here too */
 }
 
 /* Header Alignment */

@@ -1,7 +1,7 @@
 /* Section Styling */
 #projects {
   padding: 40px 10px; /* Reduce padding for smaller screens */
-  background-color: #000;
+  background: "transparent";
   text-align: center;
 }
 

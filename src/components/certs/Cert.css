@@ -1,7 +1,7 @@
 /* Section Styling */
 #certificate {
   padding: 60px 20px;
-  background-color: #000; /* Lighter background for better contrast */
+  background-color: "transparent"; /* Lighter background for better contrast */
   text-align: center;
 }
 

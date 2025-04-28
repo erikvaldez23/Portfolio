@@ -1,7 +1,7 @@
 /* Section Styling */
 #orgs {
   padding: 60px 20px;
-  background-color: #000; /* Lighter background for better contrast */
+  background-color: "transparent";
   text-align: center;
 }
 

@@ -1,61 +1,179 @@
-import React from "react";
+import { useState } from 'react';
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Paper,
+  InputAdornment,
+  Collapse,
+  Alert,
+} from '@mui/material';
+import { Send, User, Mail, MessageSquare } from 'lucide-react';
 
-const Contact = () => {
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const primaryColor = '#df4747';
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitted(false);
+    }, 3000);
+  };
+
   return (
-    <div className="contact-container">
-      <h2 className="contact-title">Contact</h2>
-      <p className="contact-subtitle">
-        Feel free to reach out—let’s connect and explore how we can collaborate on exciting projects!
-      </p>
-      <div className="contact-content">
-        {/* Left Section: Contact Information */}
-        <div className="contact-info">
-          <div className="info-item">
-            <span className="icon">📍</span>
-            <div>
-              <h3>Location</h3>
-              <p>Texas Tech University <br /> Lubbock, TX</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <span className="icon">📞</span>
-            <div>
-              <h3>Call Me</h3>
-              <p>(469) 386-7877</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <span className="icon">📧</span>
-            <div>
-              <h3>Email Me</h3>
-              <p>erikkvaldez@gmail.com</p>
-            </div>
-          </div>
-          {/* Embedded Google Map */}
-          <iframe
-            className="map"
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.8299093627054!2d-101.87574318480378!3d33.58456264833109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fe08c7a244e717%3A0x6c8a2df178b8e2f1!2sTexas%20Tech%20University!5e0!3m2!1sen!2sus!4v1632897641513!5m2!1sen!2sus"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        px: 2,
+        py: 6,
+        bgcolor: 'transparent',
+      }}
+    >
+      <Paper
+        elevation={4}
+        sx={{
+          width: '100%',
+          maxWidth: 800,
+          borderRadius: 3,
+          overflow: 'hidden',
+        }}
+      >
+        {/* Header */}
+        <Box
+          sx={{
+            bgcolor: '#df4747',
+            color: '#fff',
+            px: 4,
+            py: 5,
+            position: 'relative',
+          }}
+        >
+          <Box
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              bgcolor: 'transparent',
+              opacity: 0.2,
+              zIndex: 0,
+            }}
+          />
+          <Box sx={{ position: 'relative', zIndex: 1 }}>
+            <Typography variant="h4" fontWeight="bold" gutterBottom>
+              Get in Touch
+            </Typography>
+            <Typography color="gray.300">
+              Fill out the form below and I'll get back to you soon!
+            </Typography>
+          </Box>
+        </Box>
 
-        {/* Right Section: Contact Form */}
-        <div className="contact-form">
-          <form>
-            <div className="input-group">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-            </div>
-            <input type="text" placeholder="Subject" required />
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
+        {/* Form */}
+        <Box component="form" onSubmit={handleSubmit} sx={{ p: 4 }}>
+          <Collapse in={submitted}>
+            <Alert severity="success" sx={{ mb: 3 }}>
+              Your message has been sent successfully!
+            </Alert>
+          </Collapse>
+
+          {!submitted && (
+            <Box display="flex" flexDirection="column" gap={3}>
+              <TextField
+                label="Your Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                fullWidth
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <User size={18} />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+
+              <TextField
+                label="Email Address"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                fullWidth
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Mail size={18} />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+
+              <TextField
+                label="Subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                fullWidth
+              />
+
+              <TextField
+                label="Your Message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                fullWidth
+                multiline
+                rows={5}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <MessageSquare size={18} />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{
+                  bgcolor: primaryColor,
+                  color: '#fff',
+                  '&:hover': {
+                    bgcolor: '#c13d3d',
+                  },
+                }}
+                endIcon={<Send size={18} />}
+              >
+                Send Message
+              </Button>
+            </Box>
+          )}
+        </Box>
+      </Paper>
+    </Box>
   );
-};
-
-export default Contact;
+}

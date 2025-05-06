@@ -57,7 +57,7 @@ const App = () => {
                 <Cert />
                 <Orgs />
                 {/* <Courses /> */}
-                {/* <Contact /> */}
+                <Contact />
                 <Footer />
               </>
             }

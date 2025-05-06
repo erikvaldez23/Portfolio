@@ -18,7 +18,7 @@
   gap: 20px;
   justify-content: center;
   padding: 20px;
-  max-width: 1400px; /* Max width */
+  max-width: 1700px; /* Max width */
   margin: 0 auto; /* Center alignment */
 }
 
@@ -32,8 +32,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, background-color 0.3s ease;
-  max-width: 300px; /* Set a consistent size */
-  max-height: 200px;
+  width: 320px; /* Set a consistent size */
+  height: 100px;
   margin: auto; /* Center cards if smaller than container */
 }
 
@@ -59,7 +59,7 @@
 
 .skill-content p {
   margin: 5px 0 0;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: #f1f1f1; /* Lighter text color for descriptions */
 }
 
@@ -67,12 +67,13 @@
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
-    gap: 15px;
+    gap: 5px;
   }
 
   .skill-item {
     padding: 15px;
     height: 150px;
+    width: 150px;
   }
 
   .skill-item i {

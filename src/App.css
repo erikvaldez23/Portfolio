@@ -35,6 +35,7 @@ html, body {
 @media (max-width: 768px) {
   .section {
     padding: 40px 15px; /* Reduce padding for mobile */
+
   }
 
   .section h1 {
@@ -54,3 +55,4 @@ html, body {
     margin-left: 15px; /* Reduce left margin on lists for mobile */
   }
 }
+

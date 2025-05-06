@@ -176,23 +176,34 @@ export default function Topbar() {
   const handleNavigation = (item) => {
     if (item.isAnchor) {
       if (window.location.pathname !== "/") {
-        // 🛑 If we're on a subpage, navigate to home first with the hash
         navigate(`/${item.path}`);
+        setTimeout(() => {
+          const element = document.querySelector(item.path);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+          if (isMobile) {
+            setMobileOpen(false);
+          }
+        }, 300); // Delay to let the route switch and DOM load
       } else {
-        // 🟢 Already on home page, scroll smoothly
         const element = document.querySelector(item.path);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
+        if (isMobile) {
+          setMobileOpen(false);
+        }
       }
     } else {
-      window.location.href = item.path;
-    }
-  
-    if (isMobile) {
-      setMobileOpen(false);
+      navigate(item.path);
+      if (isMobile) {
+        setMobileOpen(false);
+      }
     }
   };
+  
+  
   
   
 

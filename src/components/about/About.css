@@ -4,9 +4,9 @@
 }
 
 .about-container {
-  padding: 30px 15px;
+  padding: 60px 50px;
   margin: 0 auto; /* Move container to the left */
-  max-width: 1400px; /* Restrict max width for better alignment */
+  max-width: 1700px; /* Restrict max width for better alignment */
   width: 100%; /* Ensure it spans the full width of the parent */
   border-radius: 10px;
   text-align: center; /* Center-align content by default */
@@ -43,7 +43,7 @@
 }
 
 .about-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   text-align: justify; /* Justify for larger screens */
   color: #fff;
@@ -81,6 +81,8 @@
 @media (max-width: 480px) {
   .about-container {
     padding: 15px 10px; /* Compact padding for small screens */
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .header {

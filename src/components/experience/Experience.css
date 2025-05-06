@@ -76,17 +76,11 @@
 /* Responsive Styling for Mobile Devices */
 @media (max-width: 768px) {
   .experience-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center-align the cards */
     gap: 20px; /* Maintain spacing between stacked cards */
+    width: 100%; /* Make cards take up most of the viewport width */
+    margin: 0 auto; 
+    padding: 15px 0px; /* Compact padding for small screens */
   }
-
-  .experience-card {
-    width: 90%; /* Make cards take up most of the viewport width */
-    max-width: 800px; /* Limit the maximum width */
-    padding: 20px; /* Adjust padding for better spacing */
-  }
-
   .company-logo {
     width: 40px; /* Reduce the logo size for smaller screens */
   }

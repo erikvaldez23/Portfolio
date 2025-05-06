@@ -19,11 +19,18 @@ const HeroSection = () => {
   const handleClose = () => setOpen(false);
 
   const learnMoreScroll = () => {
-    document.getElementById("what-we-do")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start", // Aligns the element to the top of the viewport
-    });
+    const target = document.getElementById("about");
+    if (target) {
+      const offset = -100;
+      const topPosition = target.getBoundingClientRect().top + window.pageYOffset + offset;
+  
+      window.scrollTo({
+        top: topPosition,
+        behavior: "smooth",
+      });
+    }
   };
+  
 
   return (
     <Box

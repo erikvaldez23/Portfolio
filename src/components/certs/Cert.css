@@ -100,13 +100,10 @@
 /* Responsive Styling for Mobile Devices */
 @media (max-width: 768px) {
   .certificate-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center-align cards */
     gap: 20px; /* Maintain space between stacked cards */
   }
 
   .certificate-card {
     width: 90%; /* Make cards take up most of the viewport width */
-    max-width: 800px; /* Limit maximum width for consistency */
   }
 }

@@ -31,6 +31,9 @@ const HeroSection = () => {
     }
   };
   
+  const handleResumeClick = () => {
+    window.open('/Valdez.Resume.pdf', '_blank');
+  };
 
   return (
     <Box
@@ -194,38 +197,27 @@ const HeroSection = () => {
               >
                 Learn More
               </Button>
-              {open && (
-                <Dialog
-                  open={open}
-                  onClose={handleClose}
-                  maxWidth="md"
-                  fullWidth
-                >
-                  <DialogContent sx={{ position: "relative", padding: 0 }}>
-                    <IconButton
-                      onClick={handleClose}
-                      sx={{
-                        position: "absolute",
-                        top: 10,
-                        right: 10,
-                        backgroundColor: "white",
-                        "&:hover": { backgroundColor: "lightgray" },
-                      }}
-                    >
-                      <FaTimes />
-                    </IconButton>
-
-                    <iframe
-                      src=""
-                      width="100%"
-                      height="800px"
-                      style={{ border: "none" }}
-                      title="Fast Quote"
-                      loading="lazy"
-                    />
-                  </DialogContent>
-                </Dialog>
-              )}
+              <Button
+                sx={{
+                  fontFamily: 'Oswald',
+                  border: "3px solid #df4747",
+                  color: "#df4747",
+                  borderRadius: "30px",
+                  fontSize: { xs: "0.9rem", md: "1.5rem" },
+                  fontWeight: 600,
+                  py: 1.5,
+                  px: 4,
+                  "&:hover": {
+                    borderColor: "#df4747",
+                    background: "rgba(201,180,154,0.08)",
+                    boxShadow: "0 0 15px rgba(201,180,154,0.2)",
+                  },
+                  transition: "all 0.3s ease",
+                }}
+                onClick={handleResumeClick}
+              >
+                VIEW RESUME
+              </Button>
             </Box>
           </motion.div>
         </Box>
